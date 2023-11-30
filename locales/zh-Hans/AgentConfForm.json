@@ -1,0 +1,82 @@
+{
+  "bundle": "打包",
+  "bundle_failed": "打包 {{ source }} 到 {{ target }} 失败",
+  "bundle_succeed": "打包 {{ source }} 到 {{ target }} 成功",
+  "cloud_deploy": "部署到云",
+  "config_invalid": "模型配置参数校验失败",
+  "load_config": "载入配置",
+  "load_config_failed": "加载 {{ filename }} 失败: {{ message }}",
+  "load_config_filename_prompt": "请输入配置文件路径",
+  "load_config_succeed": "加载 {{ filename }} 完成",
+  "prototype_failed": "创建应用原型失败，请检查代码是否有误",
+  "prototype_start": "正在创建模型原型...",
+  "prototype_succeed": "模型原型创建成功，成功解析模型参数",
+  "refresh_schema": "刷新表单",
+  "require_config": "未找到模型配置，请先解析模型配置",
+  "require_entry_field": "需要补充模型入口路径字段",
+  "root_account_id": {
+    "title": "账户ID"
+  },
+  "root_agent_params": {
+    "description": "模型代码中定义的自定义参数",
+    "title": "自定义参数"
+  },
+  "root_as_counterparty": {
+    "description": "原账户做多时会变成做空，反之亦然。",
+    "title": "作为对手盘"
+  },
+  "root_coefficient_fn_str": {
+    "title": "仓位映射函数"
+  },
+  "root_currency": {
+    "title": "账户币种"
+  },
+  "root_disable_log": {
+    "description": "不打印日志可以加快回测速度。批量回测时强制禁用",
+    "title": "禁用打印日志"
+  },
+  "root_end_time": {
+    "description": "提前拉取历史数据的区间终点；实盘时强制设定为当前时间；非实盘时留空表示拉取无穷晚的数据；时区按照本地时区填写",
+    "title": "历史数据结束时间"
+  },
+  "root_entry": {
+    "description": "",
+    "title": "模型入口路径"
+  },
+  "root_initial_balance": {
+    "title": "初始余额"
+  },
+  "root_is_real": {
+    "description": "实盘模式下会订阅实时行情，非实盘模式仅会使用历史数据。",
+    "title": "实盘模式"
+  },
+  "root_kernel_id": {
+    "description": "用于标识内核程序ID，在同个主机中唯一，默认通过 UUID 生成，实盘时建议手动指定。",
+    "title": "内核ID"
+  },
+  "root_leverage": {
+    "title": "账户杠杆"
+  },
+  "root_position_limit": {
+    "title": "仓位限制"
+  },
+  "root_resume_on_source_margin_below": {
+    "title": "恢复交易的使用保证金阈值"
+  },
+  "root_start_time": {
+    "description": "提前拉取历史数据的区间起点；留空表示拉取无穷早的数据；时区按照本地时区填写",
+    "title": "历史数据开始时间"
+  },
+  "root_use_general_product": {
+    "description": "使用标准品种信息作为品种信息",
+    "title": "使用标准品种信息"
+  },
+  "run": "运行",
+  "run_failed": "运行模型实例失败，请检查代码或配置是否有问题",
+  "run_succeed": "运行完毕",
+  "save_config": "保存配置",
+  "save_config_failed": "保存 {{ filename }} 失败",
+  "save_config_filename_prompt": "请输入保存配置的路径",
+  "save_config_succeed": "保存 {{ filename }} 成功",
+  "view_source": "查看源代码"
+}
