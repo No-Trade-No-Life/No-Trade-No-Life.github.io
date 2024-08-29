@@ -115,14 +115,19 @@ interface IDataRecordViewDef<T> {
   export {  };
 }
 
+ const loadTgzBlob: (tgzBlob: Blob) => Promise<{
+    filename: string;
+    blob: Blob;
+}[]>;
  function resolveVersion(packageName: string, ver?: string): Promise<{
     meta: any;
     version: string;
 }>;
 
+ const index_d$i_loadTgzBlob: typeof loadTgzBlob;
  const index_d$i_resolveVersion: typeof resolveVersion;
  namespace index_d$i {
-  export { index_d$i_resolveVersion as resolveVersion };
+  export { index_d$i_loadTgzBlob as loadTgzBlob, index_d$i_resolveVersion as resolveVersion };
 }
 
 interface IFileSystemStatResult {
