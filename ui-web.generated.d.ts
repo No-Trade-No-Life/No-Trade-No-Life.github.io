@@ -243,6 +243,11 @@ interface IFileSystemBackend {
   export {  };
 }
 
+ const LocalizePageTitle: React.ComponentType<{
+    type: string;
+    params?: any;
+}>;
+
 interface IPage {
     id: string;
     type: string;
@@ -268,9 +273,12 @@ interface IPage {
 } | undefined;
  const usePageId: () => string;
 
+ const AvailableComponents: Record<string, React.ComponentType>;
  const pageRegistered$: Subject<string>;
  const registerPage: (type: string, component: React.ComponentType) => void;
 
+ const index_d$9_AvailableComponents: typeof AvailableComponents;
+ const index_d$9_LocalizePageTitle: typeof LocalizePageTitle;
  const index_d$9_Page: typeof Page;
  const index_d$9_pageRegistered$: typeof pageRegistered$;
  const index_d$9_registerPage: typeof registerPage;
@@ -280,7 +288,7 @@ interface IPage {
  const index_d$9_usePageType: typeof usePageType;
  const index_d$9_usePageViewport: typeof usePageViewport;
  namespace index_d$9 {
-  export { index_d$9_Page as Page, index_d$9_pageRegistered$ as pageRegistered$, index_d$9_registerPage as registerPage, index_d$9_usePageId as usePageId, index_d$9_usePageParams as usePageParams, index_d$9_usePageTitle as usePageTitle, index_d$9_usePageType as usePageType, index_d$9_usePageViewport as usePageViewport };
+  export { index_d$9_AvailableComponents as AvailableComponents, index_d$9_LocalizePageTitle as LocalizePageTitle, index_d$9_Page as Page, index_d$9_pageRegistered$ as pageRegistered$, index_d$9_registerPage as registerPage, index_d$9_usePageId as usePageId, index_d$9_usePageParams as usePageParams, index_d$9_usePageTitle as usePageTitle, index_d$9_usePageType as usePageType, index_d$9_usePageViewport as usePageViewport };
 }
 
  const useProducts: (datasource_id: string) => Observable<IProduct[]>;
@@ -332,6 +340,13 @@ interface IPage {
   export { index_d$2_ensureAuthenticated as ensureAuthenticated };
 }
 
+ const isShowHome$: BehaviorSubject<boolean>;
+ const toggleShowHome: () => void;
+ const HomePage: React.MemoExoticComponent<() => react_jsx_runtime.JSX.Element>;
+
+ const isDarkMode$: BehaviorSubject<boolean>;
+ const useIsDarkMode: () => boolean;
+
 /**
  * Hook to use the page closing confirm
  *
@@ -343,9 +358,14 @@ interface IPage {
  */
  const usePageClosingConfirm: (disabled?: boolean) => void;
 
+ const index_d$1_HomePage: typeof HomePage;
+ const index_d$1_isDarkMode$: typeof isDarkMode$;
+ const index_d$1_isShowHome$: typeof isShowHome$;
+ const index_d$1_toggleShowHome: typeof toggleShowHome;
+ const index_d$1_useIsDarkMode: typeof useIsDarkMode;
  const index_d$1_usePageClosingConfirm: typeof usePageClosingConfirm;
  namespace index_d$1 {
-  export { index_d$1_usePageClosingConfirm as usePageClosingConfirm };
+  export { index_d$1_HomePage as HomePage, index_d$1_isDarkMode$ as isDarkMode$, index_d$1_isShowHome$ as isShowHome$, index_d$1_toggleShowHome as toggleShowHome, index_d$1_useIsDarkMode as useIsDarkMode, index_d$1_usePageClosingConfirm as usePageClosingConfirm };
 }
 
 /**
