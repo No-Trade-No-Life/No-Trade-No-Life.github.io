@@ -139,6 +139,7 @@ interface IFileSystemBackend {
     stat(path: string): Promise<IFileSystemStatResult>;
     readFile(path: string): Promise<string>;
     readFileAsBase64(path: string): Promise<string>;
+    readFileAsBlob(path: string): Promise<Blob>;
     writeFile(path: string, content: FileSystemWriteChunkType): Promise<void>;
     mkdir(path: string): Promise<void>;
     rm(path: string): Promise<void>;
@@ -149,7 +150,6 @@ interface IFileSystemBackend {
  const workspaceRoot$: BehaviorSubject<FileSystemDirectoryHandle | null | undefined>;
  const fs: IFileSystemBackend & {
     ensureDir: (path: string) => Promise<void>;
-    readAsBlob: (path: string) => Promise<Blob>;
 };
 
  const createPersistBehaviorSubject: <T>(key: string, initialValue: T) => BehaviorSubject<T | undefined>;
@@ -340,9 +340,9 @@ interface IPage {
   export { index_d$2_ensureAuthenticated as ensureAuthenticated };
 }
 
- const isShowHome$: BehaviorSubject<boolean>;
+ const isShowHome$: rxjs.BehaviorSubject<boolean | undefined>;
  const toggleShowHome: () => void;
- const HomePage: React.MemoExoticComponent<() => react_jsx_runtime.JSX.Element>;
+ const HomePage: React.MemoExoticComponent<() => react_jsx_runtime.JSX.Element | null>;
 
  const isDarkMode$: BehaviorSubject<boolean>;
  const useIsDarkMode: () => boolean;
