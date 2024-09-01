@@ -2,7 +2,7 @@ declare module "@yuants/ui-web" {
 import * as react_jsx_runtime from 'react/jsx-runtime';
 import React, { ComponentType } from 'react';
 import * as rxjs from 'rxjs';
-import { ReplaySubject, BehaviorSubject, Subject, Observable } from 'rxjs';
+import { BehaviorSubject, ReplaySubject, Subject, Observable } from 'rxjs';
 import * as _yuants_data_model from '@yuants/data-model';
 import { IDataRecord, IProduct } from '@yuants/data-model';
 import { ColumnDef, Table } from '@tanstack/react-table';
@@ -14,7 +14,7 @@ import * as _supabase_supabase_js from '@supabase/supabase-js';
 import { User } from '@supabase/supabase-js';
 import { Terminal } from '@yuants/protocol';
 
- namespace index_d$v {
+ namespace index_d$w {
   export {  };
 }
 
@@ -30,19 +30,40 @@ import { Terminal } from '@yuants/protocol';
 
  const useAccountInfo: (account_id: string) => rxjs.Observable<_yuants_data_model.IAccountInfo>;
 
- const index_d$u_AccountSelector: typeof AccountSelector;
- const index_d$u_InlineAccountId: typeof InlineAccountId;
- const index_d$u_useAccountInfo: typeof useAccountInfo;
+ const index_d$v_AccountSelector: typeof AccountSelector;
+ const index_d$v_InlineAccountId: typeof InlineAccountId;
+ const index_d$v_useAccountInfo: typeof useAccountInfo;
+ namespace index_d$v {
+  export { index_d$v_AccountSelector as AccountSelector, index_d$v_InlineAccountId as InlineAccountId, index_d$v_useAccountInfo as useAccountInfo };
+}
+
  namespace index_d$u {
-  export { index_d$u_AccountSelector as AccountSelector, index_d$u_InlineAccountId as InlineAccountId, index_d$u_useAccountInfo as useAccountInfo };
+  export {  };
 }
 
  namespace index_d$t {
   export {  };
 }
 
+/**
+ * BIOS Status Component
+ * @public
+ */
+ const BIOS: React.MemoExoticComponent<() => react_jsx_runtime.JSX.Element>;
+
+ const createPersistBehaviorSubject: <T>(key: string, initialValue: T) => BehaviorSubject<T | undefined>;
+
+/**
+ * A subject that emits a single value when the workspace is ready.
+ * @public
+ */
+ const ready$: ReplaySubject<unknown>;
+
+ const index_d$s_BIOS: typeof BIOS;
+ const index_d$s_createPersistBehaviorSubject: typeof createPersistBehaviorSubject;
+ const index_d$s_ready$: typeof ready$;
  namespace index_d$s {
-  export {  };
+  export { index_d$s_BIOS as BIOS, index_d$s_createPersistBehaviorSubject as createPersistBehaviorSubject, index_d$s_ready$ as ready$ };
 }
 
  namespace index_d$r {
@@ -135,6 +156,7 @@ interface IFileSystemStatResult {
     isDirectory: () => boolean;
 }
 interface IFileSystemBackend {
+    name: string;
     readdir(path: string): Promise<string[]>;
     stat(path: string): Promise<IFileSystemStatResult>;
     readFile(path: string): Promise<string>;
@@ -148,18 +170,28 @@ interface IFileSystemBackend {
 
  const FsBackend$: ReplaySubject<IFileSystemBackend>;
  const workspaceRoot$: BehaviorSubject<FileSystemDirectoryHandle | null | undefined>;
+ const historyWorkspaceRoot$: BehaviorSubject<FileSystemDirectoryHandle[] | undefined>;
+ const replaceWorkspaceRoot: (root?: FileSystemDirectoryHandle) => Promise<void>;
  const fs: IFileSystemBackend & {
     ensureDir: (path: string) => Promise<void>;
 };
 
- const createPersistBehaviorSubject: <T>(key: string, initialValue: T) => BehaviorSubject<T | undefined>;
+/**
+ * Bundle code from entry
+ * @param entry entry filename
+ * @returns IIFE-formatted code
+ * @public
+ */
+ const bundleCode: (entry: string) => Promise<string>;
 
  const index_d$h_FsBackend$: typeof FsBackend$;
- const index_d$h_createPersistBehaviorSubject: typeof createPersistBehaviorSubject;
+ const index_d$h_bundleCode: typeof bundleCode;
  const index_d$h_fs: typeof fs;
+ const index_d$h_historyWorkspaceRoot$: typeof historyWorkspaceRoot$;
+ const index_d$h_replaceWorkspaceRoot: typeof replaceWorkspaceRoot;
  const index_d$h_workspaceRoot$: typeof workspaceRoot$;
  namespace index_d$h {
-  export { index_d$h_FsBackend$ as FsBackend$, index_d$h_createPersistBehaviorSubject as createPersistBehaviorSubject, index_d$h_fs as fs, index_d$h_workspaceRoot$ as workspaceRoot$ };
+  export { index_d$h_FsBackend$ as FsBackend$, index_d$h_bundleCode as bundleCode, index_d$h_fs as fs, index_d$h_historyWorkspaceRoot$ as historyWorkspaceRoot$, index_d$h_replaceWorkspaceRoot as replaceWorkspaceRoot, index_d$h_workspaceRoot$ as workspaceRoot$ };
 }
 
  function generateTemplates<T = any, S extends StrictRJSFSchema = RJSFSchema, F extends FormContextType = any>(): Partial<TemplatesType<T, S, F>>;
@@ -344,7 +376,7 @@ interface IPage {
  const toggleShowHome: () => void;
  const HomePage: React.MemoExoticComponent<() => react_jsx_runtime.JSX.Element | null>;
 
- const isDarkMode$: BehaviorSubject<boolean>;
+ const isDarkMode$: rxjs.BehaviorSubject<boolean | undefined>;
  const useIsDarkMode: () => boolean;
 
 /**
@@ -368,18 +400,10 @@ interface IPage {
   export { index_d$1_HomePage as HomePage, index_d$1_isDarkMode$ as isDarkMode$, index_d$1_isShowHome$ as isShowHome$, index_d$1_toggleShowHome as toggleShowHome, index_d$1_useIsDarkMode as useIsDarkMode, index_d$1_usePageClosingConfirm as usePageClosingConfirm };
 }
 
-/**
- * Bundle code from entry
- * @param entry entry filename
- * @returns IIFE-formatted code
- */
- const bundleCode: (entry: string) => Promise<string>;
-
- const index_d_bundleCode: typeof bundleCode;
  namespace index_d {
-  export { index_d_bundleCode as bundleCode };
+  export {  };
 }
 
-export { index_d$v as AccountComposition, index_d$u as AccountInfo, index_d$t as AccountRiskInfo, index_d$s as Agent, index_d$r as Chart, index_d$q as CommandCenter, index_d$p as Copilot, index_d$o as CopyDataRelation, index_d$n as Data, index_d$m as DataRecord, index_d$l as Deploy, index_d$k as DesktopLayout, index_d$j as Editor, index_d$i as Extensions, index_d$h as FileSystem, index_d$g as Form, index_d$f as Fund, index_d$e as GeneralSpecificRelations, index_d$d as Interactive, index_d$c as Kernel, index_d$b as Market, index_d$a as Order, index_d$9 as Pages, index_d$8 as Products, index_d$7 as PullSourceRelations, index_d$6 as SupaBase, index_d$5 as Terminals, index_d$4 as TradeCopier, index_d$3 as TransferOrder, index_d$2 as User, index_d$1 as Workbench, index_d as Workspace };
+export { index_d$w as AccountComposition, index_d$v as AccountInfo, index_d$u as AccountRiskInfo, index_d$t as Agent, index_d$s as BIOS, index_d$r as Chart, index_d$q as CommandCenter, index_d$p as Copilot, index_d$o as CopyDataRelation, index_d$n as Data, index_d$m as DataRecord, index_d$l as Deploy, index_d$k as DesktopLayout, index_d$j as Editor, index_d$i as Extensions, index_d$h as FileSystem, index_d$g as Form, index_d$f as Fund, index_d$e as GeneralSpecificRelations, index_d$d as Interactive, index_d$c as Kernel, index_d$b as Market, index_d$a as Order, index_d$9 as Pages, index_d$8 as Products, index_d$7 as PullSourceRelations, index_d$6 as SupaBase, index_d$5 as Terminals, index_d$4 as TradeCopier, index_d$3 as TransferOrder, index_d$2 as User, index_d$1 as Workbench, index_d as Workspace };
 
 }
