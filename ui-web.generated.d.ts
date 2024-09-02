@@ -224,6 +224,99 @@ interface IFileSystemBackend {
   export { index_d$g_Form as Form, _default$1 as Templates, index_d$g_Theme as Theme, _default as Widgets, Form as default, index_d$g_generateForm as generateForm, index_d$g_generateTemplates as generateTemplates, index_d$g_generateTheme as generateTheme, index_d$g_generateWidgets as generateWidgets, index_d$g_showForm as showForm };
 }
 
+interface IFundEvent {
+    type: string;
+    updated_at: string;
+    comment?: string;
+    /** 设置 Fund 账户 ID */
+    account_id?: string;
+    /** 更新基金总资产的动作 */
+    fund_equity?: {
+        equity: number;
+    };
+    /** 更新投资人信息的动作 */
+    order?: {
+        name: string;
+        /** 净入金 */
+        deposit: number;
+    };
+    investor?: {
+        name: string;
+        /** 更改税率 */
+        tax_rate?: number;
+    };
+}
+/**
+ * 基金状态
+ *
+ * @public
+ */
+interface IFundState {
+    account_id: string;
+    created_at: number;
+    updated_at: number;
+    description: string;
+    /** 总资产 */
+    total_assets: number;
+    /** 已征税费 */
+    total_taxed: number;
+    summary_derived: {
+        /** 总入金 */
+        total_deposit: number;
+        /** 总份额 */
+        total_share: number;
+        /** 总税费 */
+        total_tax: number;
+        /** 单位净值 */
+        unit_price: number;
+        /** 存续时间 */
+        total_time: number;
+        /** 总收益 */
+        total_profit: number;
+    };
+    investors: Record<string, InvestorMeta>;
+    investor_derived: Record<string, InvestorInfoDerived>;
+    events: IFundEvent[];
+}
+interface InvestorMeta {
+    /** 姓名 */
+    name: string;
+    /** 份额 */
+    share: number;
+    /** 起征点 */
+    tax_threshold: number;
+    /** 净入金 */
+    deposit: number;
+    /** 税率 */
+    tax_rate: number;
+}
+/**
+ * 投资人信息的计算衍生数据
+ */
+interface InvestorInfoDerived {
+    /** 税前资产 */
+    pre_tax_assets: number;
+    /** 应税额 */
+    taxable: number;
+    /** 税费 */
+    tax: number;
+    /** 税后资产 */
+    after_tax_assets: number;
+    /** 税后收益 */
+    after_tax_profit: number;
+    /** 税后收益率 */
+    after_tax_profit_rate: number;
+    /** 税后份额 */
+    after_tax_share: number;
+    /** 份额占比 */
+    share_ratio: number;
+}
+ module '@yuants/data-model/lib/DataRecord' {
+    interface IDataRecordTypes {
+        fund_state: IFundState;
+    }
+}
+
  namespace index_d$f {
   export {  };
 }
@@ -348,13 +441,15 @@ interface IPage {
 }
 
  const terminal$: Observable<Terminal | null>;
+ const useTerminal: () => Terminal | null | undefined;
 
  const useTick: (datasource_id: string, product_id: string) => rxjs.Observable<_yuants_data_model.ITick>;
 
  const index_d$5_terminal$: typeof terminal$;
+ const index_d$5_useTerminal: typeof useTerminal;
  const index_d$5_useTick: typeof useTick;
  namespace index_d$5 {
-  export { index_d$5_terminal$ as terminal$, index_d$5_useTick as useTick };
+  export { index_d$5_terminal$ as terminal$, index_d$5_useTerminal as useTerminal, index_d$5_useTick as useTick };
 }
 
  namespace index_d$4 {
