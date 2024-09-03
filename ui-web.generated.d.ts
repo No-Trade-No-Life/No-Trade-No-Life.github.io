@@ -495,8 +495,29 @@ interface IPage {
   export { index_d$1_HomePage as HomePage, index_d$1_isDarkMode$ as isDarkMode$, index_d$1_isShowHome$ as isShowHome$, index_d$1_toggleShowHome as toggleShowHome, index_d$1_useIsDarkMode as useIsDarkMode, index_d$1_usePageClosingConfirm as usePageClosingConfirm };
 }
 
+/**
+ * File is associated with Command
+ */
+interface IAssociationRule {
+    /** i18n_key = `association:${id}`  */
+    id: string;
+    priority?: number;
+    match: (ctx: {
+        path: string;
+        isFile: boolean;
+    }) => boolean;
+    action: (ctx: {
+        path: string;
+        isFile: boolean;
+    }) => void;
+}
+ const registerAssociationRule: (rule: IAssociationRule) => void;
+ const executeAssociatedRule: (filename: string, rule_index?: number) => Promise<void>;
+
+ const index_d_executeAssociatedRule: typeof executeAssociatedRule;
+ const index_d_registerAssociationRule: typeof registerAssociationRule;
  namespace index_d {
-  export {  };
+  export { index_d_executeAssociatedRule as executeAssociatedRule, index_d_registerAssociationRule as registerAssociationRule };
 }
 
 export { index_d$w as AccountComposition, index_d$v as AccountInfo, index_d$u as AccountRiskInfo, index_d$t as Agent, index_d$s as BIOS, index_d$r as Chart, index_d$q as CommandCenter, index_d$p as Copilot, index_d$o as CopyDataRelation, index_d$n as Data, index_d$m as DataRecord, index_d$l as Deploy, index_d$k as DesktopLayout, index_d$j as Editor, index_d$i as Extensions, index_d$h as FileSystem, index_d$g as Form, index_d$f as Fund, index_d$e as GeneralSpecificRelations, index_d$d as Interactive, index_d$c as Kernel, index_d$b as Market, index_d$a as Order, index_d$9 as Pages, index_d$8 as Products, index_d$7 as PullSourceRelations, index_d$6 as SupaBase, index_d$5 as Terminals, index_d$4 as TradeCopier, index_d$3 as TransferOrder, index_d$2 as User, index_d$1 as Workbench, index_d as Workspace };
