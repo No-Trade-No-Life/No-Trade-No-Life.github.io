@@ -182,16 +182,51 @@ interface IFileSystemBackend {
  * @returns IIFE-formatted code
  * @public
  */
- const bundleCode: (entry: string) => Promise<string>;
+ const bundleCode: (entry: string, externals: string[]) => Promise<string>;
+
+interface PackageJson {
+    name?: string;
+    main?: string;
+    module?: string;
+    dir?: string;
+    pkg?: PackageJson;
+}
+interface IOptions {
+    isFile?: (file: string) => Promise<boolean>;
+    isDirectory?: (dir: string) => Promise<boolean>;
+    realpathSync?: (x: string) => Promise<string>;
+    readFileSync?: (file: string) => Promise<string>;
+    readPackageSync?: (file: string) => Promise<PackageJson>;
+    preserveSymlinks?: boolean;
+    extensions?: string[];
+    includeCoreModules?: boolean;
+    basedir?: string;
+    filename?: string;
+    paths?: string[] | ((request: string, start: string, getPaths: () => string[], opts: IOptions) => string[]);
+    packageFilter?: (pkg: PackageJson, pkgfile: string, dir: string) => PackageJson;
+    /**
+     * transform a path within a package
+     *
+     * @param pkg - package data
+     * @param path - the path being resolved
+     * @param relativePath - the path relative from the package.json location
+     * @returns - a relative path that will be joined from the package.json location
+     */
+    pathFilter?: (pkg: PackageJson, path: string, relativePath: string) => string;
+    moduleDirectory?: string[];
+    packageIterator?: (request: string, start: string, thunk: () => string[], opts: IOptions) => string[];
+}
+ function resolve(x: string, options: IOptions): Promise<string>;
 
  const index_d$h_FsBackend$: typeof FsBackend$;
  const index_d$h_bundleCode: typeof bundleCode;
  const index_d$h_fs: typeof fs;
  const index_d$h_historyWorkspaceRoot$: typeof historyWorkspaceRoot$;
  const index_d$h_replaceWorkspaceRoot: typeof replaceWorkspaceRoot;
+ const index_d$h_resolve: typeof resolve;
  const index_d$h_workspaceRoot$: typeof workspaceRoot$;
  namespace index_d$h {
-  export { index_d$h_FsBackend$ as FsBackend$, index_d$h_bundleCode as bundleCode, index_d$h_fs as fs, index_d$h_historyWorkspaceRoot$ as historyWorkspaceRoot$, index_d$h_replaceWorkspaceRoot as replaceWorkspaceRoot, index_d$h_workspaceRoot$ as workspaceRoot$ };
+  export { index_d$h_FsBackend$ as FsBackend$, index_d$h_bundleCode as bundleCode, index_d$h_fs as fs, index_d$h_historyWorkspaceRoot$ as historyWorkspaceRoot$, index_d$h_replaceWorkspaceRoot as replaceWorkspaceRoot, index_d$h_resolve as resolve, index_d$h_workspaceRoot$ as workspaceRoot$ };
 }
 
  function generateTemplates<T = any, S extends StrictRJSFSchema = RJSFSchema, F extends FormContextType = any>(): Partial<TemplatesType<T, S, F>>;
@@ -471,6 +506,16 @@ interface IPage {
  const toggleShowHome: () => void;
  const HomePage: React.MemoExoticComponent<() => react_jsx_runtime.JSX.Element | null>;
 
+ const secretURL: (url: string) => string;
+interface ICryptoHostConfig {
+    label: string;
+    public_key: string;
+    private_key: string;
+    host_url: string;
+}
+ const cryptoHosts$: rxjs.BehaviorSubject<ICryptoHostConfig[] | undefined>;
+ const network$: rxjs.Observable<string[]>;
+
  const isDarkMode$: rxjs.BehaviorSubject<boolean | undefined>;
  const useIsDarkMode: () => boolean;
 
@@ -486,13 +531,16 @@ interface IPage {
  const usePageClosingConfirm: (disabled?: boolean) => void;
 
  const index_d$1_HomePage: typeof HomePage;
+ const index_d$1_cryptoHosts$: typeof cryptoHosts$;
  const index_d$1_isDarkMode$: typeof isDarkMode$;
  const index_d$1_isShowHome$: typeof isShowHome$;
+ const index_d$1_network$: typeof network$;
+ const index_d$1_secretURL: typeof secretURL;
  const index_d$1_toggleShowHome: typeof toggleShowHome;
  const index_d$1_useIsDarkMode: typeof useIsDarkMode;
  const index_d$1_usePageClosingConfirm: typeof usePageClosingConfirm;
  namespace index_d$1 {
-  export { index_d$1_HomePage as HomePage, index_d$1_isDarkMode$ as isDarkMode$, index_d$1_isShowHome$ as isShowHome$, index_d$1_toggleShowHome as toggleShowHome, index_d$1_useIsDarkMode as useIsDarkMode, index_d$1_usePageClosingConfirm as usePageClosingConfirm };
+  export { index_d$1_HomePage as HomePage, index_d$1_cryptoHosts$ as cryptoHosts$, index_d$1_isDarkMode$ as isDarkMode$, index_d$1_isShowHome$ as isShowHome$, index_d$1_network$ as network$, index_d$1_secretURL as secretURL, index_d$1_toggleShowHome as toggleShowHome, index_d$1_useIsDarkMode as useIsDarkMode, index_d$1_usePageClosingConfirm as usePageClosingConfirm };
 }
 
 /**
