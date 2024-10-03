@@ -409,8 +409,26 @@ type index_d$d_IPivotTableProps<T> = IPivotTableProps<T>;
   export {  };
 }
 
+interface IInterleavingConfigItem {
+    account_id: string;
+    datasource_id: string;
+    product_id: string;
+    order_type: string;
+    order_direction: string;
+    volume: number;
+    disabled?: boolean;
+}
+interface IInterleavingConfig {
+    count: number;
+    items: IInterleavingConfigItem[];
+}
+ const InterleavingTraderConfig$: BehaviorSubject<IInterleavingConfig | undefined>;
+
+type index_d$a_IInterleavingConfig = IInterleavingConfig;
+type index_d$a_IInterleavingConfigItem = IInterleavingConfigItem;
+ const index_d$a_InterleavingTraderConfig$: typeof InterleavingTraderConfig$;
  namespace index_d$a {
-  export {  };
+  export { type index_d$a_IInterleavingConfig as IInterleavingConfig, type index_d$a_IInterleavingConfigItem as IInterleavingConfigItem, index_d$a_InterleavingTraderConfig$ as InterleavingTraderConfig$ };
 }
 
  const LocalizePageTitle: React.ComponentType<{
