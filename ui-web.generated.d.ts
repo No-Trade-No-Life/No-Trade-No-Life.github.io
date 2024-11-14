@@ -10,6 +10,7 @@ import { JSONSchema7 } from 'json-schema';
 import { ThemeProps, FormProps } from '@rjsf/core';
 import { StrictRJSFSchema, RJSFSchema, FormContextType, TemplatesType, RegistryWidgetsType } from '@rjsf/utils';
 import { ButtonProps } from '@douyinfe/semi-ui/lib/es/button';
+import { ToastReactProps } from '@douyinfe/semi-ui/lib/es/toast';
 import * as _supabase_supabase_js from '@supabase/supabase-js';
 import { User } from '@supabase/supabase-js';
 import { Terminal } from '@yuants/protocol';
@@ -398,14 +399,26 @@ interface IPivotTableProps<T> {
     table: Table<T>;
 }): react_jsx_runtime.JSX.Element;
 
+/**
+ * Yuan Toast Component
+ */
+ const Toast: {
+    info: (props: ToastReactProps) => string;
+    error: (props: ToastReactProps) => string;
+    success: (props: ToastReactProps) => string;
+    warning: (props: ToastReactProps) => string;
+    close: (id: string) => void;
+};
+
  const index_d$e_Button: typeof Button;
  const index_d$e_DataView: typeof DataView;
 type index_d$e_IPivotTableProps<T> = IPivotTableProps<T>;
  const index_d$e_ListView: typeof ListView;
  const index_d$e_PivotTable: typeof PivotTable;
  const index_d$e_TableView: typeof TableView;
+ const index_d$e_Toast: typeof Toast;
  namespace index_d$e {
-  export { index_d$e_Button as Button, index_d$e_DataView as DataView, type index_d$e_IPivotTableProps as IPivotTableProps, index_d$e_ListView as ListView, index_d$e_PivotTable as PivotTable, index_d$e_TableView as TableView };
+  export { index_d$e_Button as Button, index_d$e_DataView as DataView, type index_d$e_IPivotTableProps as IPivotTableProps, index_d$e_ListView as ListView, index_d$e_PivotTable as PivotTable, index_d$e_TableView as TableView, index_d$e_Toast as Toast };
 }
 
  namespace index_d$d {
