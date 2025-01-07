@@ -132,11 +132,17 @@ interface IDataRecordViewDef<T> {
   export {  };
 }
 
+interface INpmPackagePullParams {
+    name: string;
+    registry: string;
+    version?: string;
+    npm_token?: string;
+}
  const loadTgzBlob: (tgzBlob: Blob) => Promise<{
     filename: string;
     blob: Blob;
 }[]>;
- function resolveVersion(packageName: string, ver?: string): Promise<{
+ function resolveVersion(packageName: string, ver?: string, context?: INpmPackagePullParams): Promise<{
     meta: any;
     version: string;
 }>;
@@ -242,7 +248,14 @@ interface IOptions {
  * @param initialData - Initial data to be filled in the form
  * @returns Promise of user input data
  */
- const showForm: <T>(schema: JSONSchema7, initialData?: any) => Promise<T>;
+ const showForm: <T>(schema: JSONSchema7, initialData?: any, options?: {
+    /**
+     * Whether to submit the form immediately if the initial data is valid.
+     * if set to true, the form will be submitted immediately without showing the form.
+     * if initial data is invalid, the form will be shown as usual.
+     */
+    immediateSubmit?: boolean;
+}) => Promise<T>;
 
  const index_d$h_Form: typeof Form;
  const index_d$h_Theme: typeof Theme;
@@ -376,7 +389,7 @@ interface InvestorInfoDerived {
  * - We need to know whether the backend click event is processing or not.
  */
  const Button: React.MemoExoticComponent<(props: Omit<ButtonProps, 'onClick' | 'loading'> & {
-    onClick: () => Promise<void>;
+    onClick: () => Promise<any>;
 }) => react_jsx_runtime.JSX.Element>;
 
  function DataView<T>(props: {
