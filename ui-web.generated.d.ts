@@ -600,7 +600,6 @@ interface IPage {
 
  const FullScreenButton: () => react_jsx_runtime.JSX.Element;
 
- const secretURL: (url: string) => string;
 interface ICryptoHostConfig {
     label: string;
     public_key: string;
@@ -636,12 +635,11 @@ type index_d$1_IHostConfigItem = IHostConfigItem;
  const index_d$1_isDarkMode$: typeof isDarkMode$;
  const index_d$1_isShowHome$: typeof isShowHome$;
  const index_d$1_network$: typeof network$;
- const index_d$1_secretURL: typeof secretURL;
  const index_d$1_toggleShowHome: typeof toggleShowHome;
  const index_d$1_useIsDarkMode: typeof useIsDarkMode;
  const index_d$1_usePageClosingConfirm: typeof usePageClosingConfirm;
  namespace index_d$1 {
-  export { index_d$1_DarkModeEffect as DarkModeEffect, index_d$1_DarkModeSetting$ as DarkModeSetting$, index_d$1_DarkmodeSwitch as DarkmodeSwitch, index_d$1_FullScreenButton as FullScreenButton, index_d$1_HomePage as HomePage, type index_d$1_IHostConfigItem as IHostConfigItem, index_d$1_OHLCIdList$ as OHLCIdList$, index_d$1_cryptoHosts$ as cryptoHosts$, index_d$1_currentHostConfig$ as currentHostConfig$, index_d$1_hostConfigList$ as hostConfigList$, index_d$1_initAction$ as initAction$, index_d$1_isDarkMode$ as isDarkMode$, index_d$1_isShowHome$ as isShowHome$, index_d$1_network$ as network$, index_d$1_secretURL as secretURL, index_d$1_toggleShowHome as toggleShowHome, index_d$1_useIsDarkMode as useIsDarkMode, index_d$1_usePageClosingConfirm as usePageClosingConfirm };
+  export { index_d$1_DarkModeEffect as DarkModeEffect, index_d$1_DarkModeSetting$ as DarkModeSetting$, index_d$1_DarkmodeSwitch as DarkmodeSwitch, index_d$1_FullScreenButton as FullScreenButton, index_d$1_HomePage as HomePage, type index_d$1_IHostConfigItem as IHostConfigItem, index_d$1_OHLCIdList$ as OHLCIdList$, index_d$1_cryptoHosts$ as cryptoHosts$, index_d$1_currentHostConfig$ as currentHostConfig$, index_d$1_hostConfigList$ as hostConfigList$, index_d$1_initAction$ as initAction$, index_d$1_isDarkMode$ as isDarkMode$, index_d$1_isShowHome$ as isShowHome$, index_d$1_network$ as network$, index_d$1_toggleShowHome as toggleShowHome, index_d$1_useIsDarkMode as useIsDarkMode, index_d$1_usePageClosingConfirm as usePageClosingConfirm };
 }
 
 /**
