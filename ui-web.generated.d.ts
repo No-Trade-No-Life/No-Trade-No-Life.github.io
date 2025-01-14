@@ -1,11 +1,12 @@
 declare module "@yuants/ui-web" {
+/// <reference types="react" />
 import * as react_jsx_runtime from 'react/jsx-runtime';
-import React, { ComponentType } from 'react';
+import React$1, { ComponentType } from 'react';
 import * as rxjs from 'rxjs';
 import { BehaviorSubject, ReplaySubject, Subject, Observable } from 'rxjs';
 import * as _yuants_data_model from '@yuants/data-model';
 import { IDataRecord, IProduct } from '@yuants/data-model';
-import { ColumnDef, Table, GroupingState, ExpandedState } from '@tanstack/react-table';
+import { ColumnDef, SortingState, OnChangeFn, Table, GroupingState, ExpandedState } from '@tanstack/react-table';
 import { JSONSchema7 } from 'json-schema';
 import { ThemeProps, FormProps } from '@rjsf/core';
 import { StrictRJSFSchema, RJSFSchema, FormContextType, TemplatesType, RegistryWidgetsType } from '@rjsf/utils';
@@ -25,7 +26,7 @@ import { Terminal } from '@yuants/protocol';
     candidates: string[];
 }) => react_jsx_runtime.JSX.Element;
 
- const InlineAccountId: React.MemoExoticComponent<(props: {
+ const InlineAccountId: React$1.MemoExoticComponent<(props: {
     account_id: string;
 }) => react_jsx_runtime.JSX.Element>;
 
@@ -68,7 +69,7 @@ import { Terminal } from '@yuants/protocol';
 
  const registerCommand: (id: string, handler: (params: any) => void) => void;
  const executeCommand: (id: string, params?: {}) => Promise<void>;
- const CommandCenter: React.MemoExoticComponent<() => react_jsx_runtime.JSX.Element>;
+ const CommandCenter: React$1.MemoExoticComponent<() => react_jsx_runtime.JSX.Element>;
 
  const index_d$r_CommandCenter: typeof CommandCenter;
  const index_d$r_executeCommand: typeof executeCommand;
@@ -97,11 +98,11 @@ interface IDataRecordViewDef<T> {
     columns: (ctx: {
         reloadData: () => Promise<void>;
     }) => ColumnDef<IDataRecord<T>, any>[];
-    extraRecordActions?: React.ComponentType<{
+    extraRecordActions?: React$1.ComponentType<{
         reloadData: () => Promise<void>;
         record: IDataRecord<T>;
     }>;
-    extraHeaderActions?: React.ComponentType<{}>;
+    extraHeaderActions?: React$1.ComponentType<{}>;
     newRecord: () => Partial<T>;
     mapOriginToDataRecord?: (x: T) => IDataRecord<T>;
     beforeUpdateTrigger?: (x: T) => void | Promise<void>;
@@ -240,7 +241,7 @@ interface IOptions {
  function generateTheme<T = any, S extends StrictRJSFSchema = RJSFSchema, F extends FormContextType = any>(): ThemeProps<T, S, F>;
  const Theme: ThemeProps<any, RJSFSchema, any>;
  function generateForm<T = any, S extends StrictRJSFSchema = RJSFSchema, F extends FormContextType = any>(): ComponentType<FormProps<T, S, F>>;
- const Form: (props: Omit<FormProps<any, any, any>, 'validator'>) => React.ReactElement<FormProps<any, RJSFSchema, any>, string | React.JSXElementConstructor<any>>;
+ const Form: (props: Omit<FormProps<any, any, any>, 'validator'>) => React$1.ReactElement<FormProps<any, RJSFSchema, any>, string | React$1.JSXElementConstructor<any>>;
 
 /**
  * Request user to input data according to the schema.
@@ -388,12 +389,18 @@ interface InvestorInfoDerived {
  * - Button displays loading if and only if click event processing
  * - We need to know whether the backend click event is processing or not.
  */
- const Button: React.MemoExoticComponent<(props: Omit<ButtonProps, 'onClick' | 'loading'> & {
+ const Button: React$1.MemoExoticComponent<(props: Omit<ButtonProps, 'onClick' | 'loading'> & {
     onClick: () => Promise<any>;
 }) => react_jsx_runtime.JSX.Element>;
 
  function DataView<T>(props: {
-    table: Table<T>;
+    data: T[];
+    columns: ColumnDef<T, any>[];
+    initialSorting?: SortingState;
+    sorting?: SortingState;
+    onSortingChange?: OnChangeFn<SortingState>;
+    manualSorting?: boolean;
+    tableRef?: React.MutableRefObject<Table<T> | undefined>;
 }): react_jsx_runtime.JSX.Element;
 
  function ListView<T>(props: {
@@ -443,7 +450,7 @@ type index_d$e_ToastProps = ToastProps;
 /**
  * @public
  */
- const Launch: React.MemoExoticComponent<() => react_jsx_runtime.JSX.Element>;
+ const Launch: React$1.MemoExoticComponent<() => react_jsx_runtime.JSX.Element>;
 
  const index_d$c_Launch: typeof Launch;
  namespace index_d$c {
@@ -476,7 +483,7 @@ type index_d$a_IInterleavingConfigItem = IInterleavingConfigItem;
   export { type index_d$a_IInterleavingConfig as IInterleavingConfig, type index_d$a_IInterleavingConfigItem as IInterleavingConfigItem, index_d$a_InterleavingTraderConfig$ as InterleavingTraderConfig$ };
 }
 
- const LocalizePageTitle: React.ComponentType<{
+ const LocalizePageTitle: React$1.ComponentType<{
     type: string;
     params?: any;
 }>;
@@ -492,7 +499,7 @@ interface IPage {
         y: number;
     };
 }
- const Page: React.MemoExoticComponent<(props: {
+ const Page: React$1.MemoExoticComponent<(props: {
     page: IPage;
 }) => react_jsx_runtime.JSX.Element>;
  const usePageParams: () => any;
@@ -506,9 +513,9 @@ interface IPage {
 } | undefined;
  const usePageId: () => string;
 
- const AvailableComponents: Record<string, React.ComponentType>;
+ const AvailableComponents: Record<string, React$1.ComponentType>;
  const pageRegistered$: Subject<string>;
- const registerPage: (type: string, component: React.ComponentType) => void;
+ const registerPage: (type: string, component: React$1.ComponentType) => void;
 
  const index_d$9_AvailableComponents: typeof AvailableComponents;
  const index_d$9_LocalizePageTitle: typeof LocalizePageTitle;
@@ -577,7 +584,7 @@ interface IPage {
 
  const isShowHome$: rxjs.BehaviorSubject<boolean | undefined>;
  const toggleShowHome: () => void;
- const HomePage: React.MemoExoticComponent<() => react_jsx_runtime.JSX.Element | null>;
+ const HomePage: React$1.MemoExoticComponent<() => react_jsx_runtime.JSX.Element | null>;
 
  const DarkModeSetting$: rxjs.BehaviorSubject<"auto" | "light" | "dark" | undefined>;
  const isDarkMode$: Observable<boolean>;
@@ -585,7 +592,7 @@ interface IPage {
 
  const DarkModeEffect: () => react_jsx_runtime.JSX.Element;
 
- const DarkmodeSwitch: React.MemoExoticComponent<() => react_jsx_runtime.JSX.Element>;
+ const DarkmodeSwitch: React$1.MemoExoticComponent<() => react_jsx_runtime.JSX.Element>;
 
 /**
  * Hook to use the page closing confirm
