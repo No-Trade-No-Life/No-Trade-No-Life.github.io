@@ -401,10 +401,13 @@ interface InvestorInfoDerived {
     onSortingChange?: OnChangeFn<SortingState>;
     manualSorting?: boolean;
     tableRef?: React.MutableRefObject<Table<T> | undefined>;
+    layoutMode?: 'table' | 'list' | 'auto';
+    topSlot?: React.ReactNode;
 }): react_jsx_runtime.JSX.Element;
 
  function ListView<T>(props: {
     table: Table<T>;
+    topSlot?: React$1.ReactNode;
 }): react_jsx_runtime.JSX.Element;
 
 interface IPivotTableProps<T> {
@@ -417,6 +420,7 @@ interface IPivotTableProps<T> {
 
  function TableView<T>(props: {
     table: Table<T>;
+    topSlot?: React.ReactNode;
 }): react_jsx_runtime.JSX.Element;
 
  type ToastProps = string | Omit<ToastReactProps, 'type'>;
