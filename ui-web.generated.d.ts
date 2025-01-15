@@ -142,6 +142,8 @@ interface INpmPackagePullParams {
  const loadTgzBlob: (tgzBlob: Blob) => Promise<{
     filename: string;
     blob: Blob;
+    isDirectory: boolean;
+    isFile: boolean;
 }[]>;
  function resolveVersion(context: INpmPackagePullParams): Promise<{
     meta: any;
