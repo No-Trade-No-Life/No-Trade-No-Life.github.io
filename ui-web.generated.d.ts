@@ -393,7 +393,7 @@ interface InvestorInfoDerived {
     onClick: () => Promise<any>;
 }) => react_jsx_runtime.JSX.Element>;
 
- function DataView<T>(props: {
+ function DataView<T, K>(props: {
     data: T[];
     columns: ColumnDef<T, any>[];
     initialSorting?: SortingState;
@@ -559,31 +559,59 @@ interface IPage {
   export { index_d$6_authState$ as authState$, index_d$6_supabase as supabase };
 }
 
+/**
+ * File is associated with Command
+ */
+interface IAssociationRule {
+    /** i18n_key = `association:${id}`  */
+    id: string;
+    priority?: number;
+    match: (ctx: {
+        path: string;
+        isFile: boolean;
+    }) => boolean;
+    action: (ctx: {
+        path: string;
+        isFile: boolean;
+    }) => void;
+}
+ const registerAssociationRule: (rule: IAssociationRule) => void;
+ const executeAssociatedRule: (filename: string, rule_index?: number) => Promise<void>;
+ const associationRules: IAssociationRule[];
+
+type index_d$5_IAssociationRule = IAssociationRule;
+ const index_d$5_associationRules: typeof associationRules;
+ const index_d$5_executeAssociatedRule: typeof executeAssociatedRule;
+ const index_d$5_registerAssociationRule: typeof registerAssociationRule;
+ namespace index_d$5 {
+  export { type index_d$5_IAssociationRule as IAssociationRule, index_d$5_associationRules as associationRules, index_d$5_executeAssociatedRule as executeAssociatedRule, index_d$5_registerAssociationRule as registerAssociationRule };
+}
+
  const terminal$: Observable<Terminal | null>;
  const useTerminal: () => Terminal | null | undefined;
 
  const useTick: (datasource_id: string, product_id: string) => rxjs.Observable<_yuants_data_model.ITick>;
 
- const index_d$5_terminal$: typeof terminal$;
- const index_d$5_useTerminal: typeof useTerminal;
- const index_d$5_useTick: typeof useTick;
- namespace index_d$5 {
-  export { index_d$5_terminal$ as terminal$, index_d$5_useTerminal as useTerminal, index_d$5_useTick as useTick };
-}
-
+ const index_d$4_terminal$: typeof terminal$;
+ const index_d$4_useTerminal: typeof useTerminal;
+ const index_d$4_useTick: typeof useTick;
  namespace index_d$4 {
-  export {  };
+  export { index_d$4_terminal$ as terminal$, index_d$4_useTerminal as useTerminal, index_d$4_useTick as useTick };
 }
 
  namespace index_d$3 {
   export {  };
 }
 
+ namespace index_d$2 {
+  export {  };
+}
+
  const ensureAuthenticated: () => Promise<void>;
 
- const index_d$2_ensureAuthenticated: typeof ensureAuthenticated;
- namespace index_d$2 {
-  export { index_d$2_ensureAuthenticated as ensureAuthenticated };
+ const index_d$1_ensureAuthenticated: typeof ensureAuthenticated;
+ namespace index_d$1 {
+  export { index_d$1_ensureAuthenticated as ensureAuthenticated };
 }
 
  const isShowHome$: rxjs.BehaviorSubject<boolean | undefined>;
@@ -632,52 +660,27 @@ interface IHostConfigItem {
 }>;
  const OHLCIdList$: BehaviorSubject<string[]>;
 
- const index_d$1_DarkModeEffect: typeof DarkModeEffect;
- const index_d$1_DarkModeSetting$: typeof DarkModeSetting$;
- const index_d$1_DarkmodeSwitch: typeof DarkmodeSwitch;
- const index_d$1_FullScreenButton: typeof FullScreenButton;
- const index_d$1_HomePage: typeof HomePage;
-type index_d$1_IHostConfigItem = IHostConfigItem;
- const index_d$1_OHLCIdList$: typeof OHLCIdList$;
- const index_d$1_cryptoHosts$: typeof cryptoHosts$;
- const index_d$1_currentHostConfig$: typeof currentHostConfig$;
- const index_d$1_hostConfigList$: typeof hostConfigList$;
- const index_d$1_initAction$: typeof initAction$;
- const index_d$1_isDarkMode$: typeof isDarkMode$;
- const index_d$1_isShowHome$: typeof isShowHome$;
- const index_d$1_network$: typeof network$;
- const index_d$1_toggleShowHome: typeof toggleShowHome;
- const index_d$1_useIsDarkMode: typeof useIsDarkMode;
- const index_d$1_usePageClosingConfirm: typeof usePageClosingConfirm;
- namespace index_d$1 {
-  export { index_d$1_DarkModeEffect as DarkModeEffect, index_d$1_DarkModeSetting$ as DarkModeSetting$, index_d$1_DarkmodeSwitch as DarkmodeSwitch, index_d$1_FullScreenButton as FullScreenButton, index_d$1_HomePage as HomePage, type index_d$1_IHostConfigItem as IHostConfigItem, index_d$1_OHLCIdList$ as OHLCIdList$, index_d$1_cryptoHosts$ as cryptoHosts$, index_d$1_currentHostConfig$ as currentHostConfig$, index_d$1_hostConfigList$ as hostConfigList$, index_d$1_initAction$ as initAction$, index_d$1_isDarkMode$ as isDarkMode$, index_d$1_isShowHome$ as isShowHome$, index_d$1_network$ as network$, index_d$1_toggleShowHome as toggleShowHome, index_d$1_useIsDarkMode as useIsDarkMode, index_d$1_usePageClosingConfirm as usePageClosingConfirm };
-}
-
-/**
- * File is associated with Command
- */
-interface IAssociationRule {
-    /** i18n_key = `association:${id}`  */
-    id: string;
-    priority?: number;
-    match: (ctx: {
-        path: string;
-        isFile: boolean;
-    }) => boolean;
-    action: (ctx: {
-        path: string;
-        isFile: boolean;
-    }) => void;
-}
- const registerAssociationRule: (rule: IAssociationRule) => void;
- const executeAssociatedRule: (filename: string, rule_index?: number) => Promise<void>;
-
- const index_d_executeAssociatedRule: typeof executeAssociatedRule;
- const index_d_registerAssociationRule: typeof registerAssociationRule;
+ const index_d_DarkModeEffect: typeof DarkModeEffect;
+ const index_d_DarkModeSetting$: typeof DarkModeSetting$;
+ const index_d_DarkmodeSwitch: typeof DarkmodeSwitch;
+ const index_d_FullScreenButton: typeof FullScreenButton;
+ const index_d_HomePage: typeof HomePage;
+type index_d_IHostConfigItem = IHostConfigItem;
+ const index_d_OHLCIdList$: typeof OHLCIdList$;
+ const index_d_cryptoHosts$: typeof cryptoHosts$;
+ const index_d_currentHostConfig$: typeof currentHostConfig$;
+ const index_d_hostConfigList$: typeof hostConfigList$;
+ const index_d_initAction$: typeof initAction$;
+ const index_d_isDarkMode$: typeof isDarkMode$;
+ const index_d_isShowHome$: typeof isShowHome$;
+ const index_d_network$: typeof network$;
+ const index_d_toggleShowHome: typeof toggleShowHome;
+ const index_d_useIsDarkMode: typeof useIsDarkMode;
+ const index_d_usePageClosingConfirm: typeof usePageClosingConfirm;
  namespace index_d {
-  export { index_d_executeAssociatedRule as executeAssociatedRule, index_d_registerAssociationRule as registerAssociationRule };
+  export { index_d_DarkModeEffect as DarkModeEffect, index_d_DarkModeSetting$ as DarkModeSetting$, index_d_DarkmodeSwitch as DarkmodeSwitch, index_d_FullScreenButton as FullScreenButton, index_d_HomePage as HomePage, type index_d_IHostConfigItem as IHostConfigItem, index_d_OHLCIdList$ as OHLCIdList$, index_d_cryptoHosts$ as cryptoHosts$, index_d_currentHostConfig$ as currentHostConfig$, index_d_hostConfigList$ as hostConfigList$, index_d_initAction$ as initAction$, index_d_isDarkMode$ as isDarkMode$, index_d_isShowHome$ as isShowHome$, index_d_network$ as network$, index_d_toggleShowHome as toggleShowHome, index_d_useIsDarkMode as useIsDarkMode, index_d_usePageClosingConfirm as usePageClosingConfirm };
 }
 
-export { index_d$x as AccountComposition, index_d$w as AccountInfo, index_d$v as AccountRiskInfo, index_d$u as Agent, index_d$t as BIOS, index_d$s as Chart, index_d$r as CommandCenter, index_d$q as Copilot, index_d$p as CopyDataRelation, index_d$o as Data, index_d$n as DataRecord, index_d$m as Deploy, index_d$l as DesktopLayout, index_d$k as Editor, index_d$j as Extensions, index_d$i as FileSystem, index_d$h as Form, index_d$g as Fund, index_d$f as GeneralSpecificRelations, index_d$e as Interactive, index_d$d as Kernel, index_d$c as Launch, index_d$b as Market, index_d$a as Order, index_d$9 as Pages, index_d$8 as Products, index_d$7 as PullSourceRelations, index_d$6 as SupaBase, index_d$5 as Terminals, index_d$4 as TradeCopier, index_d$3 as TransferOrder, index_d$2 as User, index_d$1 as Workbench, index_d as Workspace };
+export { index_d$x as AccountComposition, index_d$w as AccountInfo, index_d$v as AccountRiskInfo, index_d$u as Agent, index_d$t as BIOS, index_d$s as Chart, index_d$r as CommandCenter, index_d$q as Copilot, index_d$p as CopyDataRelation, index_d$o as Data, index_d$n as DataRecord, index_d$m as Deploy, index_d$l as DesktopLayout, index_d$k as Editor, index_d$j as Extensions, index_d$i as FileSystem, index_d$h as Form, index_d$g as Fund, index_d$f as GeneralSpecificRelations, index_d$e as Interactive, index_d$d as Kernel, index_d$c as Launch, index_d$b as Market, index_d$a as Order, index_d$9 as Pages, index_d$8 as Products, index_d$7 as PullSourceRelations, index_d$6 as SupaBase, index_d$5 as System, index_d$4 as Terminals, index_d$3 as TradeCopier, index_d$2 as TransferOrder, index_d$1 as User, index_d as Workbench };
 
 }
