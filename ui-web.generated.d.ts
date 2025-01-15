@@ -135,7 +135,7 @@ interface IDataRecordViewDef<T> {
 
 interface INpmPackagePullParams {
     name: string;
-    registry: string;
+    registry?: string;
     version?: string;
     npm_token?: string;
 }
@@ -143,7 +143,7 @@ interface INpmPackagePullParams {
     filename: string;
     blob: Blob;
 }[]>;
- function resolveVersion(packageName: string, ver?: string, context?: INpmPackagePullParams): Promise<{
+ function resolveVersion(context: INpmPackagePullParams): Promise<{
     meta: any;
     version: string;
 }>;
