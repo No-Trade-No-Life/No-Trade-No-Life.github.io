@@ -398,6 +398,7 @@ interface InvestorInfoDerived {
  function DataView<T, K>(props: {
     data: T[];
     columns: ColumnDef<T, any>[];
+    columnsDependencyList?: any[];
     initialSorting?: SortingState;
     sorting?: SortingState;
     onSortingChange?: OnChangeFn<SortingState>;
