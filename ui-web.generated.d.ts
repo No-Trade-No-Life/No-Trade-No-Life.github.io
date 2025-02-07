@@ -6,7 +6,7 @@ import * as rxjs from 'rxjs';
 import { BehaviorSubject, ReplaySubject, Subject, Observable } from 'rxjs';
 import * as _yuants_data_model from '@yuants/data-model';
 import { IDataRecord, IProduct } from '@yuants/data-model';
-import { ColumnDef, SortingState, OnChangeFn, Table, GroupingState, ExpandedState } from '@tanstack/react-table';
+import { ColumnDef, Table, SortingState, OnChangeFn, GroupingState, ExpandedState } from '@tanstack/react-table';
 import { JSONSchema7 } from 'json-schema';
 import { ThemeProps, FormProps } from '@rjsf/core';
 import { StrictRJSFSchema, RJSFSchema, FormContextType, TemplatesType, RegistryWidgetsType } from '@rjsf/utils';
@@ -403,13 +403,14 @@ interface InvestorInfoDerived {
     data: T[];
     columns: ColumnDef<T, any>[];
     columnsDependencyList?: any[];
+    tableRef?: React.MutableRefObject<Table<T> | undefined>;
+    layoutMode?: 'table' | 'list' | 'auto';
+    topSlot?: React.ReactNode;
     initialSorting?: SortingState;
     sorting?: SortingState;
     onSortingChange?: OnChangeFn<SortingState>;
     manualSorting?: boolean;
-    tableRef?: React.MutableRefObject<Table<T> | undefined>;
-    layoutMode?: 'table' | 'list' | 'auto';
-    topSlot?: React.ReactNode;
+    initialGroupping?: GroupingState;
 }): react_jsx_runtime.JSX.Element;
 
  function ListView<T>(props: {
@@ -594,16 +595,21 @@ type index_d$5_IAssociationRule = IAssociationRule;
   export { type index_d$5_IAssociationRule as IAssociationRule, index_d$5_associationRules as associationRules, index_d$5_executeAssociatedRule as executeAssociatedRule, index_d$5_registerAssociationRule as registerAssociationRule };
 }
 
+ const InlineTerminalId: (props: {
+    terminal_id: string;
+}) => react_jsx_runtime.JSX.Element;
+
  const terminal$: Observable<Terminal | null>;
  const useTerminal: () => Terminal | null | undefined;
 
  const useTick: (datasource_id: string, product_id: string) => rxjs.Observable<_yuants_data_model.ITick>;
 
+ const index_d$4_InlineTerminalId: typeof InlineTerminalId;
  const index_d$4_terminal$: typeof terminal$;
  const index_d$4_useTerminal: typeof useTerminal;
  const index_d$4_useTick: typeof useTick;
  namespace index_d$4 {
-  export { index_d$4_terminal$ as terminal$, index_d$4_useTerminal as useTerminal, index_d$4_useTick as useTick };
+  export { index_d$4_InlineTerminalId as InlineTerminalId, index_d$4_terminal$ as terminal$, index_d$4_useTerminal as useTerminal, index_d$4_useTick as useTick };
 }
 
  namespace index_d$3 {
