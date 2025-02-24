@@ -415,7 +415,6 @@ interface InvestorInfoDerived {
 
  function ListView<T>(props: {
     table: Table<T>;
-    topSlot?: React$1.ReactNode;
 }): react_jsx_runtime.JSX.Element;
 
 interface IPivotTableProps<T> {
@@ -428,7 +427,6 @@ interface IPivotTableProps<T> {
 
  function TableView<T>(props: {
     table: Table<T>;
-    topSlot?: React.ReactNode;
 }): react_jsx_runtime.JSX.Element;
 
  type ToastProps = string | Omit<ToastReactProps, 'type'>;
