@@ -604,14 +604,17 @@ type index_d$5_IAssociationRule = IAssociationRule;
  const terminal$: Observable<Terminal | null>;
  const useTerminal: () => Terminal | null | undefined;
 
+ const isTerminalConnnected$: rxjs.Observable<boolean>;
+
  const useTick: (datasource_id: string, product_id: string) => rxjs.Observable<_yuants_data_model.ITick>;
 
  const index_d$4_InlineTerminalId: typeof InlineTerminalId;
+ const index_d$4_isTerminalConnnected$: typeof isTerminalConnnected$;
  const index_d$4_terminal$: typeof terminal$;
  const index_d$4_useTerminal: typeof useTerminal;
  const index_d$4_useTick: typeof useTick;
  namespace index_d$4 {
-  export { index_d$4_InlineTerminalId as InlineTerminalId, index_d$4_terminal$ as terminal$, index_d$4_useTerminal as useTerminal, index_d$4_useTick as useTick };
+  export { index_d$4_InlineTerminalId as InlineTerminalId, index_d$4_isTerminalConnnected$ as isTerminalConnnected$, index_d$4_terminal$ as terminal$, index_d$4_useTerminal as useTerminal, index_d$4_useTick as useTick };
 }
 
  namespace index_d$3 {
