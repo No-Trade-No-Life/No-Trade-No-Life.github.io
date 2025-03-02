@@ -493,10 +493,32 @@ type index_d$b_IInterleavingConfigItem = IInterleavingConfigItem;
   export { type index_d$b_IInterleavingConfig as IInterleavingConfig, type index_d$b_IInterleavingConfigItem as IInterleavingConfigItem, index_d$b_InterleavingTraderConfig$ as InterleavingTraderConfig$ };
 }
 
+ class ErrorBoundary extends React$1.Component<{
+    fallback?: React$1.ComponentType<{
+        error: any;
+        reset: () => void;
+    }>;
+    children: React$1.ReactNode;
+}> {
+    state: {
+        hasError: boolean;
+        error: null;
+    };
+    static getDerivedStateFromError(error: any): {
+        hasError: boolean;
+        error: any;
+    };
+    render(): string | number | boolean | react_jsx_runtime.JSX.Element | Iterable<React$1.ReactNode> | null | undefined;
+}
+
  const LocalizePageTitle: React$1.ComponentType<{
     type: string;
     params?: any;
 }>;
+
+ const AvailableComponents: Record<string, React$1.ComponentType>;
+ const pageRegistered$: Subject<string>;
+ const registerPage: (type: string, component: React$1.ComponentType) => void;
 
 interface IPage {
     id: string;
@@ -523,11 +545,9 @@ interface IPage {
 } | undefined;
  const usePageId: () => string;
 
- const AvailableComponents: Record<string, React$1.ComponentType>;
- const pageRegistered$: Subject<string>;
- const registerPage: (type: string, component: React$1.ComponentType) => void;
-
  const index_d$a_AvailableComponents: typeof AvailableComponents;
+type index_d$a_ErrorBoundary = ErrorBoundary;
+ const index_d$a_ErrorBoundary: typeof ErrorBoundary;
  const index_d$a_LocalizePageTitle: typeof LocalizePageTitle;
  const index_d$a_Page: typeof Page;
  const index_d$a_pageRegistered$: typeof pageRegistered$;
@@ -538,7 +558,7 @@ interface IPage {
  const index_d$a_usePageType: typeof usePageType;
  const index_d$a_usePageViewport: typeof usePageViewport;
  namespace index_d$a {
-  export { index_d$a_AvailableComponents as AvailableComponents, index_d$a_LocalizePageTitle as LocalizePageTitle, index_d$a_Page as Page, index_d$a_pageRegistered$ as pageRegistered$, index_d$a_registerPage as registerPage, index_d$a_usePageId as usePageId, index_d$a_usePageParams as usePageParams, index_d$a_usePageTitle as usePageTitle, index_d$a_usePageType as usePageType, index_d$a_usePageViewport as usePageViewport };
+  export { index_d$a_AvailableComponents as AvailableComponents, index_d$a_ErrorBoundary as ErrorBoundary, index_d$a_LocalizePageTitle as LocalizePageTitle, index_d$a_Page as Page, index_d$a_pageRegistered$ as pageRegistered$, index_d$a_registerPage as registerPage, index_d$a_usePageId as usePageId, index_d$a_usePageParams as usePageParams, index_d$a_usePageTitle as usePageTitle, index_d$a_usePageType as usePageType, index_d$a_usePageViewport as usePageViewport };
 }
 
  const useProducts: (datasource_id: string) => Observable<IProduct[]>;
