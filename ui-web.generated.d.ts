@@ -411,6 +411,7 @@ interface InvestorInfoDerived {
     onSortingChange?: OnChangeFn<SortingState>;
     manualSorting?: boolean;
     initialGroupping?: GroupingState;
+    initialTopSlotVisible?: boolean;
 }): react_jsx_runtime.JSX.Element;
 
  function ListView<T>(props: {
