@@ -412,6 +412,9 @@ interface InvestorInfoDerived {
     manualSorting?: boolean;
     initialGroupping?: GroupingState;
     initialTopSlotVisible?: boolean;
+    CustomView?: React.ComponentType<{
+        table: Table<T>;
+    }>;
 }): react_jsx_runtime.JSX.Element;
 
  function ListView<T>(props: {
