@@ -412,6 +412,8 @@ interface InvestorInfoDerived {
     manualSorting?: boolean;
     initialGroupping?: GroupingState;
     initialTopSlotVisible?: boolean;
+    topSlotVisible?: boolean;
+    initialPageSize?: number;
     CustomView?: React.ComponentType<{
         table: Table<T>;
     }>;
