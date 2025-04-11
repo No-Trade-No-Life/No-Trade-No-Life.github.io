@@ -400,7 +400,7 @@ interface InvestorInfoDerived {
 }) => react_jsx_runtime.JSX.Element>;
 
  function DataView<T, K>(props: {
-    data: T[];
+    data?: T[];
     columns: ColumnDef<T, any>[];
     columnsDependencyList?: any[];
     tableRef?: React.MutableRefObject<Table<T> | undefined>;
@@ -413,6 +413,7 @@ interface InvestorInfoDerived {
     initialGroupping?: GroupingState;
     initialTopSlotVisible?: boolean;
     topSlotVisible?: boolean;
+    isLoading?: boolean;
     initialPageSize?: number;
     CustomView?: React.ComponentType<{
         table: Table<T>;
