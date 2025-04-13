@@ -3,7 +3,7 @@ declare module "@yuants/ui-web" {
 import * as react_jsx_runtime from 'react/jsx-runtime';
 import React$1, { ComponentType } from 'react';
 import * as rxjs from 'rxjs';
-import { BehaviorSubject, ReplaySubject, Subject, Observable } from 'rxjs';
+import { BehaviorSubject, ReplaySubject, Observable, Subject } from 'rxjs';
 import * as _yuants_data_model from '@yuants/data-model';
 import { IDataRecord, IProduct } from '@yuants/data-model';
 import { ColumnDef, Table, SortingState, OnChangeFn, GroupingState, ExpandedState } from '@tanstack/react-table';
@@ -128,9 +128,15 @@ interface IDataRecordViewDef<T> {
 
  const DesktopLayout: () => react_jsx_runtime.JSX.Element | null;
 
+ const activePage$: Observable<{
+    page: string;
+    pageParams: any;
+} | undefined>;
+
  const index_d$m_DesktopLayout: typeof DesktopLayout;
+ const index_d$m_activePage$: typeof activePage$;
  namespace index_d$m {
-  export { index_d$m_DesktopLayout as DesktopLayout };
+  export { index_d$m_DesktopLayout as DesktopLayout, index_d$m_activePage$ as activePage$ };
 }
 
  namespace index_d$l {
@@ -552,17 +558,11 @@ interface IPage {
 } | undefined;
  const usePageId: () => string;
 
- const activePage$: BehaviorSubject<{
-    page: string;
-    pageParams: any;
-} | null>;
-
  const index_d$a_AvailableComponents: typeof AvailableComponents;
 type index_d$a_ErrorBoundary = ErrorBoundary;
  const index_d$a_ErrorBoundary: typeof ErrorBoundary;
  const index_d$a_LocalizePageTitle: typeof LocalizePageTitle;
  const index_d$a_Page: typeof Page;
- const index_d$a_activePage$: typeof activePage$;
  const index_d$a_pageRegistered$: typeof pageRegistered$;
  const index_d$a_registerPage: typeof registerPage;
  const index_d$a_usePageId: typeof usePageId;
@@ -571,7 +571,7 @@ type index_d$a_ErrorBoundary = ErrorBoundary;
  const index_d$a_usePageType: typeof usePageType;
  const index_d$a_usePageViewport: typeof usePageViewport;
  namespace index_d$a {
-  export { index_d$a_AvailableComponents as AvailableComponents, index_d$a_ErrorBoundary as ErrorBoundary, index_d$a_LocalizePageTitle as LocalizePageTitle, index_d$a_Page as Page, index_d$a_activePage$ as activePage$, index_d$a_pageRegistered$ as pageRegistered$, index_d$a_registerPage as registerPage, index_d$a_usePageId as usePageId, index_d$a_usePageParams as usePageParams, index_d$a_usePageTitle as usePageTitle, index_d$a_usePageType as usePageType, index_d$a_usePageViewport as usePageViewport };
+  export { index_d$a_AvailableComponents as AvailableComponents, index_d$a_ErrorBoundary as ErrorBoundary, index_d$a_LocalizePageTitle as LocalizePageTitle, index_d$a_Page as Page, index_d$a_pageRegistered$ as pageRegistered$, index_d$a_registerPage as registerPage, index_d$a_usePageId as usePageId, index_d$a_usePageParams as usePageParams, index_d$a_usePageTitle as usePageTitle, index_d$a_usePageType as usePageType, index_d$a_usePageViewport as usePageViewport };
 }
 
  const useProducts: (datasource_id: string) => Observable<IProduct[]>;
