@@ -9,7 +9,7 @@ import { IDataRecord, IProduct } from '@yuants/data-model';
 import { ColumnDef, Table, SortingState, OnChangeFn, GroupingState, ExpandedState } from '@tanstack/react-table';
 import { JSONSchema7 } from 'json-schema';
 import { ThemeProps, FormProps } from '@rjsf/core';
-import { StrictRJSFSchema, RJSFSchema, FormContextType, TemplatesType, RegistryWidgetsType } from '@rjsf/utils';
+import { StrictRJSFSchema, RJSFSchema, FormContextType, TemplatesType, RegistryWidgetsType, UiSchema } from '@rjsf/utils';
 import { ButtonProps } from '@douyinfe/semi-ui/lib/es/button';
 import { ToastReactProps } from '@douyinfe/semi-ui/lib/es/toast';
 import * as _supabase_supabase_js from '@supabase/supabase-js';
@@ -267,8 +267,9 @@ interface IOptions {
      * if set to true, the form will be submitted immediately without showing the form.
      * if initial data is invalid, the form will be shown as usual.
      */
-    immediateSubmit?: boolean;
-}) => Promise<T>;
+    immediateSubmit?: boolean | undefined;
+    uiSchema?: UiSchema<T, any, any> | undefined;
+} | undefined) => Promise<T>;
 
  const index_d$i_Form: typeof Form;
  const index_d$i_Theme: typeof Theme;
