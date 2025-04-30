@@ -6,7 +6,7 @@ import * as rxjs from 'rxjs';
 import { BehaviorSubject, ReplaySubject, Observable, Subject } from 'rxjs';
 import * as _yuants_data_model from '@yuants/data-model';
 import { IDataRecord, IProduct } from '@yuants/data-model';
-import { ColumnDef, Table, SortingState, OnChangeFn, GroupingState, ExpandedState } from '@tanstack/react-table';
+import { ColumnDef, Table, SortingState, OnChangeFn, GroupingState, VisibilityState, ExpandedState } from '@tanstack/react-table';
 import { JSONSchema7 } from 'json-schema';
 import { ThemeProps, FormProps } from '@rjsf/core';
 import { StrictRJSFSchema, RJSFSchema, FormContextType, TemplatesType, RegistryWidgetsType, UiSchema } from '@rjsf/utils';
@@ -418,6 +418,7 @@ interface InvestorInfoDerived {
     onSortingChange?: OnChangeFn<SortingState>;
     manualSorting?: boolean;
     initialGroupping?: GroupingState;
+    initialColumnVisibility?: VisibilityState;
     initialTopSlotVisible?: boolean;
     topSlotVisible?: boolean;
     isLoading?: boolean;
