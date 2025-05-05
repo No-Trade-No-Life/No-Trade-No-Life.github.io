@@ -426,6 +426,7 @@ interface InvestorInfoDerived {
     CustomView?: React.ComponentType<{
         table: Table<T>;
     }>;
+    enableAutoPause?: boolean;
 }): react_jsx_runtime.JSX.Element;
 
  function ListView<T>(props: {
