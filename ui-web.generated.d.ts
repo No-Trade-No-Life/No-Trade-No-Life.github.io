@@ -184,9 +184,6 @@ interface IFileSystemBackend {
 }
 
  const FsBackend$: ReplaySubject<IFileSystemBackend>;
- const workspaceRoot$: BehaviorSubject<FileSystemDirectoryHandle | null | undefined>;
- const historyWorkspaceRoot$: BehaviorSubject<FileSystemDirectoryHandle[] | undefined>;
- const replaceWorkspaceRoot: (root?: FileSystemDirectoryHandle) => Promise<void>;
  const fs: IFileSystemBackend & {
     ensureDir: (path: string) => Promise<void>;
 };
@@ -236,12 +233,9 @@ interface IOptions {
  const index_d$j_FsBackend$: typeof FsBackend$;
  const index_d$j_bundleCode: typeof bundleCode;
  const index_d$j_fs: typeof fs;
- const index_d$j_historyWorkspaceRoot$: typeof historyWorkspaceRoot$;
- const index_d$j_replaceWorkspaceRoot: typeof replaceWorkspaceRoot;
  const index_d$j_resolve: typeof resolve;
- const index_d$j_workspaceRoot$: typeof workspaceRoot$;
  namespace index_d$j {
-  export { index_d$j_FsBackend$ as FsBackend$, index_d$j_bundleCode as bundleCode, index_d$j_fs as fs, index_d$j_historyWorkspaceRoot$ as historyWorkspaceRoot$, index_d$j_replaceWorkspaceRoot as replaceWorkspaceRoot, index_d$j_resolve as resolve, index_d$j_workspaceRoot$ as workspaceRoot$ };
+  export { index_d$j_FsBackend$ as FsBackend$, index_d$j_bundleCode as bundleCode, index_d$j_fs as fs, index_d$j_resolve as resolve };
 }
 
  function generateTemplates<T = any, S extends StrictRJSFSchema = RJSFSchema, F extends FormContextType = any>(): Partial<TemplatesType<T, S, F>>;
