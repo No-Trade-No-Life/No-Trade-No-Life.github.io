@@ -5,8 +5,8 @@ import React$1, { ComponentType } from 'react';
 import * as rxjs from 'rxjs';
 import { BehaviorSubject, ReplaySubject, Observable, Subject } from 'rxjs';
 import * as _yuants_data_model from '@yuants/data-model';
-import { IDataRecord, IProduct } from '@yuants/data-model';
-import { ColumnDef, Table, SortingState, OnChangeFn, GroupingState, VisibilityState, ExpandedState } from '@tanstack/react-table';
+import { IDataRecord } from '@yuants/data-model';
+import { ColumnDef, Table, SortingState, OnChangeFn, GroupingState, VisibilityState, ColumnFiltersState, ExpandedState } from '@tanstack/react-table';
 import { JSONSchema7 } from 'json-schema';
 import { ThemeProps, FormProps } from '@rjsf/core';
 import { StrictRJSFSchema, RJSFSchema, FormContextType, TemplatesType, RegistryWidgetsType, UiSchema } from '@rjsf/utils';
@@ -413,6 +413,9 @@ interface InvestorInfoDerived {
     manualSorting?: boolean;
     initialGroupping?: GroupingState;
     initialColumnVisibility?: VisibilityState;
+    initialColumnFilterState?: ColumnFiltersState;
+    columnFilters?: ColumnFiltersState;
+    onColumnFiltersChange?: OnChangeFn<ColumnFiltersState>;
     initialTopSlotVisible?: boolean;
     topSlotVisible?: boolean;
     isLoading?: boolean;
@@ -571,11 +574,8 @@ type index_d$a_ErrorBoundary = ErrorBoundary;
   export { index_d$a_AvailableComponents as AvailableComponents, index_d$a_ErrorBoundary as ErrorBoundary, index_d$a_LocalizePageTitle as LocalizePageTitle, index_d$a_Page as Page, index_d$a_pageRegistered$ as pageRegistered$, index_d$a_registerPage as registerPage, index_d$a_usePageId as usePageId, index_d$a_usePageParams as usePageParams, index_d$a_usePageTitle as usePageTitle, index_d$a_usePageType as usePageType, index_d$a_usePageViewport as usePageViewport };
 }
 
- const useProducts: (datasource_id: string) => Observable<IProduct[]>;
-
- const index_d$9_useProducts: typeof useProducts;
  namespace index_d$9 {
-  export { index_d$9_useProducts as useProducts };
+  export {  };
 }
 
  namespace index_d$8 {
