@@ -5,7 +5,6 @@ import React$1, { ComponentType } from 'react';
 import * as rxjs from 'rxjs';
 import { BehaviorSubject, ReplaySubject, Observable, Subject } from 'rxjs';
 import * as _yuants_data_model from '@yuants/data-model';
-import { IDataRecord } from '@yuants/data-model';
 import { ColumnDef, Table, SortingState, OnChangeFn, GroupingState, VisibilityState, ColumnFiltersState, ExpandedState } from '@tanstack/react-table';
 import { JSONSchema7 } from 'json-schema';
 import { ThemeProps, FormProps } from '@rjsf/core';
@@ -16,7 +15,7 @@ import * as _supabase_supabase_js from '@supabase/supabase-js';
 import { User } from '@supabase/supabase-js';
 import { Terminal } from '@yuants/protocol';
 
- namespace index_d$y {
+ namespace index_d$x {
   export {  };
 }
 
@@ -32,18 +31,18 @@ import { Terminal } from '@yuants/protocol';
 
  const useAccountInfo: (account_id: string) => rxjs.Observable<_yuants_data_model.IAccountInfo>;
 
- const index_d$x_AccountSelector: typeof AccountSelector;
- const index_d$x_InlineAccountId: typeof InlineAccountId;
- const index_d$x_useAccountInfo: typeof useAccountInfo;
- namespace index_d$x {
-  export { index_d$x_AccountSelector as AccountSelector, index_d$x_InlineAccountId as InlineAccountId, index_d$x_useAccountInfo as useAccountInfo };
-}
-
+ const index_d$w_AccountSelector: typeof AccountSelector;
+ const index_d$w_InlineAccountId: typeof InlineAccountId;
+ const index_d$w_useAccountInfo: typeof useAccountInfo;
  namespace index_d$w {
-  export {  };
+  export { index_d$w_AccountSelector as AccountSelector, index_d$w_InlineAccountId as InlineAccountId, index_d$w_useAccountInfo as useAccountInfo };
 }
 
  namespace index_d$v {
+  export {  };
+}
+
+ namespace index_d$u {
   export {  };
 }
 
@@ -56,14 +55,14 @@ import { Terminal } from '@yuants/protocol';
  const ready$: ReplaySubject<unknown>;
  const error$: ReplaySubject<unknown>;
 
- const index_d$u_createPersistBehaviorSubject: typeof createPersistBehaviorSubject;
- const index_d$u_error$: typeof error$;
- const index_d$u_ready$: typeof ready$;
- namespace index_d$u {
-  export { index_d$u_createPersistBehaviorSubject as createPersistBehaviorSubject, index_d$u_error$ as error$, index_d$u_ready$ as ready$ };
+ const index_d$t_createPersistBehaviorSubject: typeof createPersistBehaviorSubject;
+ const index_d$t_error$: typeof error$;
+ const index_d$t_ready$: typeof ready$;
+ namespace index_d$t {
+  export { index_d$t_createPersistBehaviorSubject as createPersistBehaviorSubject, index_d$t_error$ as error$, index_d$t_ready$ as ready$ };
 }
 
- namespace index_d$t {
+ namespace index_d$s {
   export {  };
 }
 
@@ -71,15 +70,11 @@ import { Terminal } from '@yuants/protocol';
  const executeCommand: (id: string, params?: {}) => Promise<void>;
  const CommandCenter: React$1.MemoExoticComponent<() => react_jsx_runtime.JSX.Element>;
 
- const index_d$s_CommandCenter: typeof CommandCenter;
- const index_d$s_executeCommand: typeof executeCommand;
- const index_d$s_registerCommand: typeof registerCommand;
- namespace index_d$s {
-  export { index_d$s_CommandCenter as CommandCenter, index_d$s_executeCommand as executeCommand, index_d$s_registerCommand as registerCommand };
-}
-
+ const index_d$r_CommandCenter: typeof CommandCenter;
+ const index_d$r_executeCommand: typeof executeCommand;
+ const index_d$r_registerCommand: typeof registerCommand;
  namespace index_d$r {
-  export {  };
+  export { index_d$r_CommandCenter as CommandCenter, index_d$r_executeCommand as executeCommand, index_d$r_registerCommand as registerCommand };
 }
 
  namespace index_d$q {
@@ -93,25 +88,24 @@ import { Terminal } from '@yuants/protocol';
   export { index_d$p_useValue as useValue };
 }
 
-interface IDataRecordViewDef<T> {
+interface IDataRecordViewDef<T extends {}> {
     TYPE: string;
     columns: (ctx: {
         reloadData: () => Promise<void>;
-    }) => ColumnDef<IDataRecord<T>, any>[];
+    }) => ColumnDef<T, any>[];
     extraRecordActions?: React$1.ComponentType<{
         reloadData: () => Promise<void>;
-        record: IDataRecord<T>;
+        record: T;
     }>;
     extraHeaderActions?: React$1.ComponentType<{}>;
-    newRecord: () => Partial<T>;
-    mapOriginToDataRecord?: (x: T) => IDataRecord<T>;
+    newRecord?: () => Partial<T>;
     beforeUpdateTrigger?: (x: T) => void | Promise<void>;
     schema?: JSONSchema7;
 }
 /**
  * General Data Record View
  */
- function DataRecordView<T>(props: IDataRecordViewDef<T>): react_jsx_runtime.JSX.Element;
+ function DataRecordView<T extends {}>(props: IDataRecordViewDef<T>): react_jsx_runtime.JSX.Element;
 
  const index_d$o_DataRecordView: typeof DataRecordView;
  namespace index_d$o {
@@ -725,6 +719,6 @@ type index_d_IHostConfigItem = IHostConfigItem;
   export { index_d_DarkModeEffect as DarkModeEffect, index_d_DarkModeSetting$ as DarkModeSetting$, index_d_DarkmodeSwitch as DarkmodeSwitch, index_d_FullScreenButton as FullScreenButton, index_d_HomePage as HomePage, type index_d_IHostConfigItem as IHostConfigItem, index_d_OHLCIdList$ as OHLCIdList$, index_d_cryptoHosts$ as cryptoHosts$, index_d_currentHostConfig$ as currentHostConfig$, index_d_hostConfigList$ as hostConfigList$, index_d_initAction$ as initAction$, index_d_isDarkMode$ as isDarkMode$, index_d_isShowHome$ as isShowHome$, index_d_network$ as network$, index_d_toggleShowHome as toggleShowHome, index_d_useIsDarkMode as useIsDarkMode, index_d_usePageClosingConfirm as usePageClosingConfirm };
 }
 
-export { index_d$y as AccountComposition, index_d$x as AccountInfo, index_d$w as AccountRiskInfo, index_d$v as Agent, index_d$u as BIOS, index_d$t as Chart, index_d$s as CommandCenter, index_d$r as Copilot, index_d$q as CopyDataRelation, index_d$p as Data, index_d$o as DataRecord, index_d$n as DataSeries, index_d$m as Deploy, index_d$l as DesktopLayout, index_d$k as Editor, index_d$j as Extensions, index_d$i as FileSystem, index_d$h as Form, index_d$g as Fund, index_d$f as GeneralSpecificRelations, index_d$e as Interactive, index_d$d as Kernel, index_d$c as Launch, index_d$b as Market, index_d$a as Order, index_d$9 as Pages, index_d$8 as Products, index_d$7 as SQL, index_d$6 as SupaBase, index_d$5 as System, index_d$4 as Terminals, index_d$3 as TradeCopier, index_d$2 as TransferOrder, index_d$1 as User, index_d as Workbench };
+export { index_d$x as AccountComposition, index_d$w as AccountInfo, index_d$v as AccountRiskInfo, index_d$u as Agent, index_d$t as BIOS, index_d$s as Chart, index_d$r as CommandCenter, index_d$q as Copilot, index_d$p as Data, index_d$o as DataRecord, index_d$n as DataSeries, index_d$m as Deploy, index_d$l as DesktopLayout, index_d$k as Editor, index_d$j as Extensions, index_d$i as FileSystem, index_d$h as Form, index_d$g as Fund, index_d$f as GeneralSpecificRelations, index_d$e as Interactive, index_d$d as Kernel, index_d$c as Launch, index_d$b as Market, index_d$a as Order, index_d$9 as Pages, index_d$8 as Products, index_d$7 as SQL, index_d$6 as SupaBase, index_d$5 as System, index_d$4 as Terminals, index_d$3 as TradeCopier, index_d$2 as TransferOrder, index_d$1 as User, index_d as Workbench };
 
 }
