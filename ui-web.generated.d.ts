@@ -3,7 +3,7 @@ declare module "@yuants/ui-web" {
 import * as react_jsx_runtime from 'react/jsx-runtime';
 import React$1, { ComponentType } from 'react';
 import * as rxjs from 'rxjs';
-import { BehaviorSubject, ReplaySubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, ReplaySubject, Subject, Observable } from 'rxjs';
 import * as _yuants_data_account from '@yuants/data-account';
 import { ColumnDef, Table, SortingState, OnChangeFn, GroupingState, VisibilityState, ColumnFiltersState, ExpandedState } from '@tanstack/react-table';
 import { JSONSchema7 } from 'json-schema';
@@ -123,7 +123,7 @@ interface IDataRecordViewDef<T extends {}> {
 
  const DesktopLayout: () => react_jsx_runtime.JSX.Element | null;
 
- const activePage$: Observable<{
+ const activePage$: rxjs.Observable<{
     page: string;
     pageParams: any;
 } | undefined>;
