@@ -4,7 +4,7 @@ import * as react_jsx_runtime from 'react/jsx-runtime';
 import React$1, { ComponentType } from 'react';
 import * as rxjs from 'rxjs';
 import { BehaviorSubject, ReplaySubject, Observable, Subject } from 'rxjs';
-import * as _yuants_data_model from '@yuants/data-model';
+import * as _yuants_data_account from '@yuants/data-account';
 import { ColumnDef, Table, SortingState, OnChangeFn, GroupingState, VisibilityState, ColumnFiltersState, ExpandedState } from '@tanstack/react-table';
 import { JSONSchema7 } from 'json-schema';
 import { ThemeProps, FormProps } from '@rjsf/core';
@@ -13,6 +13,7 @@ import { ButtonProps } from '@douyinfe/semi-ui/lib/es/button';
 import { ToastReactProps } from '@douyinfe/semi-ui/lib/es/toast';
 import * as _supabase_supabase_js from '@supabase/supabase-js';
 import { User } from '@supabase/supabase-js';
+import * as _yuants_data_model from '@yuants/data-model';
 import { Terminal } from '@yuants/protocol';
 
  namespace index_d$x {
@@ -29,7 +30,7 @@ import { Terminal } from '@yuants/protocol';
     account_id: string;
 }) => react_jsx_runtime.JSX.Element>;
 
- const useAccountInfo: (account_id: string) => rxjs.Observable<_yuants_data_model.IAccountInfo>;
+ const useAccountInfo: (account_id: string) => rxjs.Observable<_yuants_data_account.IAccountInfo>;
 
  const index_d$w_AccountSelector: typeof AccountSelector;
  const index_d$w_InlineAccountId: typeof InlineAccountId;
