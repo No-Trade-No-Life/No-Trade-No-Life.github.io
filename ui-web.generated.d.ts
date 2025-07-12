@@ -13,7 +13,7 @@ import { ButtonProps } from '@douyinfe/semi-ui/lib/es/button';
 import { ToastReactProps } from '@douyinfe/semi-ui/lib/es/toast';
 import * as _supabase_supabase_js from '@supabase/supabase-js';
 import { User } from '@supabase/supabase-js';
-import * as _yuants_data_model from '@yuants/data-model';
+import { ITick } from '@yuants/data-model';
 import { Terminal } from '@yuants/protocol';
 
  namespace index_d$w {
@@ -518,7 +518,7 @@ type index_d$5_IAssociationRule = IAssociationRule;
 
  const isTerminalConnnected$: rxjs.Observable<boolean>;
 
- const useTick: (datasource_id: string, product_id: string) => rxjs.Observable<_yuants_data_model.ITick>;
+ const useTick: (datasource_id: string, product_id: string) => rxjs.Observable<ITick>;
 
  const index_d$4_InlineTerminalId: typeof InlineTerminalId;
  const index_d$4_isTerminalConnnected$: typeof isTerminalConnnected$;
