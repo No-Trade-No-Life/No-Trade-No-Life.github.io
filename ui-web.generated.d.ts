@@ -16,7 +16,7 @@ import { User } from '@supabase/supabase-js';
 import * as _yuants_data_model from '@yuants/data-model';
 import { Terminal } from '@yuants/protocol';
 
- namespace index_d$x {
+ namespace index_d$w {
   export {  };
 }
 
@@ -32,18 +32,18 @@ import { Terminal } from '@yuants/protocol';
 
  const useAccountInfo: (account_id: string) => rxjs.Observable<_yuants_data_account.IAccountInfo>;
 
- const index_d$w_AccountSelector: typeof AccountSelector;
- const index_d$w_InlineAccountId: typeof InlineAccountId;
- const index_d$w_useAccountInfo: typeof useAccountInfo;
- namespace index_d$w {
-  export { index_d$w_AccountSelector as AccountSelector, index_d$w_InlineAccountId as InlineAccountId, index_d$w_useAccountInfo as useAccountInfo };
-}
-
+ const index_d$v_AccountSelector: typeof AccountSelector;
+ const index_d$v_InlineAccountId: typeof InlineAccountId;
+ const index_d$v_useAccountInfo: typeof useAccountInfo;
  namespace index_d$v {
-  export {  };
+  export { index_d$v_AccountSelector as AccountSelector, index_d$v_InlineAccountId as InlineAccountId, index_d$v_useAccountInfo as useAccountInfo };
 }
 
  namespace index_d$u {
+  export {  };
+}
+
+ namespace index_d$t {
   export {  };
 }
 
@@ -56,14 +56,14 @@ import { Terminal } from '@yuants/protocol';
  const ready$: ReplaySubject<unknown>;
  const error$: ReplaySubject<unknown>;
 
- const index_d$t_createPersistBehaviorSubject: typeof createPersistBehaviorSubject;
- const index_d$t_error$: typeof error$;
- const index_d$t_ready$: typeof ready$;
- namespace index_d$t {
-  export { index_d$t_createPersistBehaviorSubject as createPersistBehaviorSubject, index_d$t_error$ as error$, index_d$t_ready$ as ready$ };
+ const index_d$s_createPersistBehaviorSubject: typeof createPersistBehaviorSubject;
+ const index_d$s_error$: typeof error$;
+ const index_d$s_ready$: typeof ready$;
+ namespace index_d$s {
+  export { index_d$s_createPersistBehaviorSubject as createPersistBehaviorSubject, index_d$s_error$ as error$, index_d$s_ready$ as ready$ };
 }
 
- namespace index_d$s {
+ namespace index_d$r {
   export {  };
 }
 
@@ -71,22 +71,22 @@ import { Terminal } from '@yuants/protocol';
  const executeCommand: (id: string, params?: {}) => Promise<void>;
  const CommandCenter: React$1.MemoExoticComponent<() => react_jsx_runtime.JSX.Element>;
 
- const index_d$r_CommandCenter: typeof CommandCenter;
- const index_d$r_executeCommand: typeof executeCommand;
- const index_d$r_registerCommand: typeof registerCommand;
- namespace index_d$r {
-  export { index_d$r_CommandCenter as CommandCenter, index_d$r_executeCommand as executeCommand, index_d$r_registerCommand as registerCommand };
+ const index_d$q_CommandCenter: typeof CommandCenter;
+ const index_d$q_executeCommand: typeof executeCommand;
+ const index_d$q_registerCommand: typeof registerCommand;
+ namespace index_d$q {
+  export { index_d$q_CommandCenter as CommandCenter, index_d$q_executeCommand as executeCommand, index_d$q_registerCommand as registerCommand };
 }
 
- namespace index_d$q {
+ namespace index_d$p {
   export {  };
 }
 
  const useValue: <T>(id: string, initialValue: T) => [T, (v: T) => void];
 
- const index_d$p_useValue: typeof useValue;
- namespace index_d$p {
-  export { index_d$p_useValue as useValue };
+ const index_d$o_useValue: typeof useValue;
+ namespace index_d$o {
+  export { index_d$o_useValue as useValue };
 }
 
 interface IDataRecordViewDef<T extends {}> {
@@ -108,16 +108,16 @@ interface IDataRecordViewDef<T extends {}> {
  */
  function DataRecordView<T extends {}>(props: IDataRecordViewDef<T>): react_jsx_runtime.JSX.Element;
 
- const index_d$o_DataRecordView: typeof DataRecordView;
- namespace index_d$o {
-  export { index_d$o_DataRecordView as DataRecordView };
-}
-
+ const index_d$n_DataRecordView: typeof DataRecordView;
  namespace index_d$n {
-  export {  };
+  export { index_d$n_DataRecordView as DataRecordView };
 }
 
  namespace index_d$m {
+  export {  };
+}
+
+ namespace index_d$l {
   export {  };
 }
 
@@ -128,13 +128,13 @@ interface IDataRecordViewDef<T extends {}> {
     pageParams: any;
 } | undefined>;
 
- const index_d$l_DesktopLayout: typeof DesktopLayout;
- const index_d$l_activePage$: typeof activePage$;
- namespace index_d$l {
-  export { index_d$l_DesktopLayout as DesktopLayout, index_d$l_activePage$ as activePage$ };
+ const index_d$k_DesktopLayout: typeof DesktopLayout;
+ const index_d$k_activePage$: typeof activePage$;
+ namespace index_d$k {
+  export { index_d$k_DesktopLayout as DesktopLayout, index_d$k_activePage$ as activePage$ };
 }
 
- namespace index_d$k {
+ namespace index_d$j {
   export {  };
 }
 
@@ -155,10 +155,10 @@ interface INpmPackagePullParams {
     version: string;
 }>;
 
- const index_d$j_loadTgzBlob: typeof loadTgzBlob;
- const index_d$j_resolveVersion: typeof resolveVersion;
- namespace index_d$j {
-  export { index_d$j_loadTgzBlob as loadTgzBlob, index_d$j_resolveVersion as resolveVersion };
+ const index_d$i_loadTgzBlob: typeof loadTgzBlob;
+ const index_d$i_resolveVersion: typeof resolveVersion;
+ namespace index_d$i {
+  export { index_d$i_loadTgzBlob as loadTgzBlob, index_d$i_resolveVersion as resolveVersion };
 }
 
 interface IFileSystemStatResult {
@@ -225,12 +225,12 @@ interface IOptions {
 }
  function resolve(x: string, options: IOptions): Promise<string>;
 
- const index_d$i_FsBackend$: typeof FsBackend$;
- const index_d$i_bundleCode: typeof bundleCode;
- const index_d$i_fs: typeof fs;
- const index_d$i_resolve: typeof resolve;
- namespace index_d$i {
-  export { index_d$i_FsBackend$ as FsBackend$, index_d$i_bundleCode as bundleCode, index_d$i_fs as fs, index_d$i_resolve as resolve };
+ const index_d$h_FsBackend$: typeof FsBackend$;
+ const index_d$h_bundleCode: typeof bundleCode;
+ const index_d$h_fs: typeof fs;
+ const index_d$h_resolve: typeof resolve;
+ namespace index_d$h {
+  export { index_d$h_FsBackend$ as FsBackend$, index_d$h_bundleCode as bundleCode, index_d$h_fs as fs, index_d$h_resolve as resolve };
 }
 
  function generateTemplates<T = any, S extends StrictRJSFSchema = RJSFSchema, F extends FormContextType = any>(): Partial<TemplatesType<T, S, F>>;
@@ -260,124 +260,15 @@ interface IOptions {
     uiSchema?: UiSchema<T, any, any> | undefined;
 } | undefined) => Promise<T>;
 
- const index_d$h_Form: typeof Form;
- const index_d$h_Theme: typeof Theme;
- const index_d$h_generateForm: typeof generateForm;
- const index_d$h_generateTemplates: typeof generateTemplates;
- const index_d$h_generateTheme: typeof generateTheme;
- const index_d$h_generateWidgets: typeof generateWidgets;
- const index_d$h_showForm: typeof showForm;
- namespace index_d$h {
-  export { index_d$h_Form as Form, _default$1 as Templates, index_d$h_Theme as Theme, _default as Widgets, Form as default, index_d$h_generateForm as generateForm, index_d$h_generateTemplates as generateTemplates, index_d$h_generateTheme as generateTheme, index_d$h_generateWidgets as generateWidgets, index_d$h_showForm as showForm };
-}
-
-interface IFundEvent {
-    type: string;
-    updated_at: string;
-    comment?: string;
-    /** 设置 Fund 账户 ID */
-    account_id?: string;
-    /** 更新基金总资产的动作 */
-    fund_equity?: {
-        equity: number;
-    };
-    /** 更新投资人信息的动作 */
-    order?: {
-        name: string;
-        /** 净入金 */
-        deposit: number;
-    };
-    investor?: {
-        name: string;
-        /** 更改税率 */
-        tax_rate?: number;
-    };
-}
-/**
- * 基金状态
- *
- * @public
- */
-interface IFundState {
-    account_id: string;
-    created_at: number;
-    updated_at: number;
-    description: string;
-    /** 总资产 */
-    total_assets: number;
-    /** 已征税费 */
-    total_taxed: number;
-    summary_derived: {
-        /** 总入金 */
-        total_deposit: number;
-        /** 总份额 */
-        total_share: number;
-        /** 总税费 */
-        total_tax: number;
-        /** 单位净值 */
-        unit_price: number;
-        /** 存续时间 */
-        total_time: number;
-        /** 总收益 */
-        total_profit: number;
-    };
-    investors: Record<string, InvestorMeta>;
-    investor_cashflow: Record<string, InvestorCashFlowItem[]>;
-    investor_derived: Record<string, InvestorInfoDerived>;
-    events: IFundEvent[];
-}
-interface InvestorCashFlowItem {
-    updated_at: number;
-    deposit: number;
-}
-interface InvestorMeta {
-    /** 姓名 */
-    name: string;
-    /** 份额 */
-    share: number;
-    /** 起征点 */
-    tax_threshold: number;
-    /** 净入金 */
-    deposit: number;
-    /** 税率 */
-    tax_rate: number;
-    /** 创建时间 */
-    created_at: number;
-}
-/**
- * 投资人信息的计算衍生数据
- */
-interface InvestorInfoDerived {
-    /** 持有时间 */
-    holding_days: number;
-    /** 资产在时间上的积分 */
-    timed_assets: number;
-    /** 税前资产 */
-    pre_tax_assets: number;
-    /** 应税额 */
-    taxable: number;
-    /** 税费 */
-    tax: number;
-    /** 税后资产 */
-    after_tax_assets: number;
-    /** 税后收益 */
-    after_tax_profit: number;
-    /** 税后收益率 */
-    after_tax_profit_rate: number;
-    after_tax_IRR: number;
-    /** 税后份额 */
-    after_tax_share: number;
-    /** 份额占比 */
-    share_ratio: number;
-}
- module '@yuants/data-model/lib/DataRecord' {
-    interface IDataRecordTypes {
-        fund_state: IFundState;
-    }
-}
-
+ const index_d$g_Form: typeof Form;
+ const index_d$g_Theme: typeof Theme;
+ const index_d$g_generateForm: typeof generateForm;
+ const index_d$g_generateTemplates: typeof generateTemplates;
+ const index_d$g_generateTheme: typeof generateTheme;
+ const index_d$g_generateWidgets: typeof generateWidgets;
+ const index_d$g_showForm: typeof showForm;
  namespace index_d$g {
-  export {  };
+  export { index_d$g_Form as Form, _default$1 as Templates, index_d$g_Theme as Theme, _default as Widgets, Form as default, index_d$g_generateForm as generateForm, index_d$g_generateTemplates as generateTemplates, index_d$g_generateTheme as generateTheme, index_d$g_generateWidgets as generateWidgets, index_d$g_showForm as showForm };
 }
 
  namespace index_d$f {
@@ -720,6 +611,6 @@ type index_d_IHostConfigItem = IHostConfigItem;
   export { index_d_DarkModeEffect as DarkModeEffect, index_d_DarkModeSetting$ as DarkModeSetting$, index_d_DarkmodeSwitch as DarkmodeSwitch, index_d_FullScreenButton as FullScreenButton, index_d_HomePage as HomePage, type index_d_IHostConfigItem as IHostConfigItem, index_d_OHLCIdList$ as OHLCIdList$, index_d_cryptoHosts$ as cryptoHosts$, index_d_currentHostConfig$ as currentHostConfig$, index_d_hostConfigList$ as hostConfigList$, index_d_initAction$ as initAction$, index_d_isDarkMode$ as isDarkMode$, index_d_isShowHome$ as isShowHome$, index_d_network$ as network$, index_d_toggleShowHome as toggleShowHome, index_d_useIsDarkMode as useIsDarkMode, index_d_usePageClosingConfirm as usePageClosingConfirm };
 }
 
-export { index_d$x as AccountComposition, index_d$w as AccountInfo, index_d$v as AccountRiskInfo, index_d$u as Agent, index_d$t as BIOS, index_d$s as Chart, index_d$r as CommandCenter, index_d$q as Copilot, index_d$p as Data, index_d$o as DataRecord, index_d$n as DataSeries, index_d$m as Deploy, index_d$l as DesktopLayout, index_d$k as Editor, index_d$j as Extensions, index_d$i as FileSystem, index_d$h as Form, index_d$g as Fund, index_d$f as GeneralSpecificRelations, index_d$e as Interactive, index_d$d as Kernel, index_d$c as Launch, index_d$b as Market, index_d$a as Order, index_d$9 as Pages, index_d$8 as Products, index_d$7 as SQL, index_d$6 as SupaBase, index_d$5 as System, index_d$4 as Terminals, index_d$3 as TradeCopier, index_d$2 as TransferOrder, index_d$1 as User, index_d as Workbench };
+export { index_d$w as AccountComposition, index_d$v as AccountInfo, index_d$u as AccountRiskInfo, index_d$t as Agent, index_d$s as BIOS, index_d$r as Chart, index_d$q as CommandCenter, index_d$p as Copilot, index_d$o as Data, index_d$n as DataRecord, index_d$m as DataSeries, index_d$l as Deploy, index_d$k as DesktopLayout, index_d$j as Editor, index_d$i as Extensions, index_d$h as FileSystem, index_d$g as Form, index_d$f as Fund, index_d$e as Interactive, index_d$d as Kernel, index_d$c as Launch, index_d$b as Market, index_d$a as Order, index_d$9 as Pages, index_d$8 as Products, index_d$7 as SQL, index_d$6 as SupaBase, index_d$5 as System, index_d$4 as Terminals, index_d$3 as TradeCopier, index_d$2 as TransferOrder, index_d$1 as User, index_d as Workbench };
 
 }
