@@ -10,6 +10,7 @@ import { JSONSchema7 } from 'json-schema';
 import { ThemeProps, FormProps } from '@rjsf/core';
 import { StrictRJSFSchema, RJSFSchema, FormContextType, TemplatesType, RegistryWidgetsType, UiSchema } from '@rjsf/utils';
 import { ButtonProps } from '@douyinfe/semi-ui/lib/es/button';
+import { UniqueIdentifier } from '@dnd-kit/core';
 import { ToastReactProps } from '@douyinfe/semi-ui/lib/es/toast';
 import * as _supabase_supabase_js from '@supabase/supabase-js';
 import { User } from '@supabase/supabase-js';
@@ -324,6 +325,12 @@ interface IPivotTableProps<T> {
 }
  function PivotTable<T>(props: IPivotTableProps<T>): react_jsx_runtime.JSX.Element;
 
+ const SortableList: (props: {
+    items: UniqueIdentifier[];
+    render: (item: UniqueIdentifier) => React.ReactNode;
+    onSort: (items: UniqueIdentifier[]) => void;
+}) => react_jsx_runtime.JSX.Element;
+
  function TableView<T>(props: {
     table: Table<T>;
 }): react_jsx_runtime.JSX.Element;
@@ -345,11 +352,12 @@ interface IPivotTableProps<T> {
 type index_d$e_IPivotTableProps<T> = IPivotTableProps<T>;
  const index_d$e_ListView: typeof ListView;
  const index_d$e_PivotTable: typeof PivotTable;
+ const index_d$e_SortableList: typeof SortableList;
  const index_d$e_TableView: typeof TableView;
  const index_d$e_Toast: typeof Toast;
 type index_d$e_ToastProps = ToastProps;
  namespace index_d$e {
-  export { index_d$e_Button as Button, index_d$e_DataView as DataView, type index_d$e_IPivotTableProps as IPivotTableProps, index_d$e_ListView as ListView, index_d$e_PivotTable as PivotTable, index_d$e_TableView as TableView, index_d$e_Toast as Toast, type index_d$e_ToastProps as ToastProps };
+  export { index_d$e_Button as Button, index_d$e_DataView as DataView, type index_d$e_IPivotTableProps as IPivotTableProps, index_d$e_ListView as ListView, index_d$e_PivotTable as PivotTable, index_d$e_SortableList as SortableList, index_d$e_TableView as TableView, index_d$e_Toast as Toast, type index_d$e_ToastProps as ToastProps };
 }
 
  namespace index_d$d {
