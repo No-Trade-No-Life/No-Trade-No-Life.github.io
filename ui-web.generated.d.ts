@@ -524,17 +524,17 @@ type index_d$5_IAssociationRule = IAssociationRule;
  const terminal$: Observable<Terminal | null>;
  const useTerminal: () => Terminal | null | undefined;
 
- const isTerminalConnnected$: rxjs.Observable<boolean>;
+ const isTerminalConnected$: rxjs.Observable<boolean>;
 
  const useTick: (datasource_id: string, product_id: string) => rxjs.Observable<ITick>;
 
  const index_d$4_InlineTerminalId: typeof InlineTerminalId;
- const index_d$4_isTerminalConnnected$: typeof isTerminalConnnected$;
+ const index_d$4_isTerminalConnected$: typeof isTerminalConnected$;
  const index_d$4_terminal$: typeof terminal$;
  const index_d$4_useTerminal: typeof useTerminal;
  const index_d$4_useTick: typeof useTick;
  namespace index_d$4 {
-  export { index_d$4_InlineTerminalId as InlineTerminalId, index_d$4_isTerminalConnnected$ as isTerminalConnnected$, index_d$4_terminal$ as terminal$, index_d$4_useTerminal as useTerminal, index_d$4_useTick as useTick };
+  export { index_d$4_InlineTerminalId as InlineTerminalId, index_d$4_isTerminalConnected$ as isTerminalConnected$, index_d$4_terminal$ as terminal$, index_d$4_useTerminal as useTerminal, index_d$4_useTick as useTick };
 }
 
  namespace index_d$3 {
@@ -577,13 +577,6 @@ type index_d$5_IAssociationRule = IAssociationRule;
 
  const FullScreenButton: () => react_jsx_runtime.JSX.Element;
 
-interface ICryptoHostConfig {
-    label: string;
-    public_key: string;
-    private_key: string;
-    host_url: string;
-}
- const cryptoHosts$: rxjs.BehaviorSubject<ICryptoHostConfig[] | undefined>;
  const network$: rxjs.Observable<string[]>;
 
 interface IHostConfigItem {
@@ -605,7 +598,6 @@ interface IHostConfigItem {
  const index_d_HomePage: typeof HomePage;
 type index_d_IHostConfigItem = IHostConfigItem;
  const index_d_OHLCIdList$: typeof OHLCIdList$;
- const index_d_cryptoHosts$: typeof cryptoHosts$;
  const index_d_currentHostConfig$: typeof currentHostConfig$;
  const index_d_hostConfigList$: typeof hostConfigList$;
  const index_d_initAction$: typeof initAction$;
@@ -616,7 +608,7 @@ type index_d_IHostConfigItem = IHostConfigItem;
  const index_d_useIsDarkMode: typeof useIsDarkMode;
  const index_d_usePageClosingConfirm: typeof usePageClosingConfirm;
  namespace index_d {
-  export { index_d_DarkModeEffect as DarkModeEffect, index_d_DarkModeSetting$ as DarkModeSetting$, index_d_DarkmodeSwitch as DarkmodeSwitch, index_d_FullScreenButton as FullScreenButton, index_d_HomePage as HomePage, type index_d_IHostConfigItem as IHostConfigItem, index_d_OHLCIdList$ as OHLCIdList$, index_d_cryptoHosts$ as cryptoHosts$, index_d_currentHostConfig$ as currentHostConfig$, index_d_hostConfigList$ as hostConfigList$, index_d_initAction$ as initAction$, index_d_isDarkMode$ as isDarkMode$, index_d_isShowHome$ as isShowHome$, index_d_network$ as network$, index_d_toggleShowHome as toggleShowHome, index_d_useIsDarkMode as useIsDarkMode, index_d_usePageClosingConfirm as usePageClosingConfirm };
+  export { index_d_DarkModeEffect as DarkModeEffect, index_d_DarkModeSetting$ as DarkModeSetting$, index_d_DarkmodeSwitch as DarkmodeSwitch, index_d_FullScreenButton as FullScreenButton, index_d_HomePage as HomePage, type index_d_IHostConfigItem as IHostConfigItem, index_d_OHLCIdList$ as OHLCIdList$, index_d_currentHostConfig$ as currentHostConfig$, index_d_hostConfigList$ as hostConfigList$, index_d_initAction$ as initAction$, index_d_isDarkMode$ as isDarkMode$, index_d_isShowHome$ as isShowHome$, index_d_network$ as network$, index_d_toggleShowHome as toggleShowHome, index_d_useIsDarkMode as useIsDarkMode, index_d_usePageClosingConfirm as usePageClosingConfirm };
 }
 
 export { index_d$w as AccountComposition, index_d$v as AccountInfo, index_d$u as AccountRiskInfo, index_d$t as Agent, index_d$s as BIOS, index_d$r as Chart, index_d$q as CommandCenter, index_d$p as Copilot, index_d$o as Data, index_d$n as DataRecord, index_d$m as DataSeries, index_d$l as Deploy, index_d$k as DesktopLayout, index_d$j as Editor, index_d$i as Extensions, index_d$h as FileSystem, index_d$g as Form, index_d$f as Fund, index_d$e as Interactive, index_d$d as Kernel, index_d$c as Launch, index_d$b as Market, index_d$a as Order, index_d$9 as Pages, index_d$8 as Products, index_d$7 as SQL, index_d$6 as SupaBase, index_d$5 as System, index_d$4 as Terminals, index_d$3 as TradeCopier, index_d$2 as TransferOrder, index_d$1 as User, index_d as Workbench };
