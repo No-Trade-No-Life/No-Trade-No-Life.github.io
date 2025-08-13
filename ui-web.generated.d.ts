@@ -12,12 +12,10 @@ import { StrictRJSFSchema, RJSFSchema, FormContextType, TemplatesType, RegistryW
 import { ButtonProps } from '@douyinfe/semi-ui/lib/es/button';
 import { UniqueIdentifier } from '@dnd-kit/core';
 import { ToastReactProps } from '@douyinfe/semi-ui/lib/es/toast';
-import * as _supabase_supabase_js from '@supabase/supabase-js';
-import { User } from '@supabase/supabase-js';
 import { ITick } from '@yuants/data-model';
 import { Terminal } from '@yuants/protocol';
 
- namespace index_d$w {
+ namespace index_d$v {
   export {  };
 }
 
@@ -33,18 +31,18 @@ import { Terminal } from '@yuants/protocol';
 
  const useAccountInfo: (account_id: string) => rxjs.Observable<_yuants_data_account.IAccountInfo>;
 
- const index_d$v_AccountSelector: typeof AccountSelector;
- const index_d$v_InlineAccountId: typeof InlineAccountId;
- const index_d$v_useAccountInfo: typeof useAccountInfo;
- namespace index_d$v {
-  export { index_d$v_AccountSelector as AccountSelector, index_d$v_InlineAccountId as InlineAccountId, index_d$v_useAccountInfo as useAccountInfo };
-}
-
+ const index_d$u_AccountSelector: typeof AccountSelector;
+ const index_d$u_InlineAccountId: typeof InlineAccountId;
+ const index_d$u_useAccountInfo: typeof useAccountInfo;
  namespace index_d$u {
-  export {  };
+  export { index_d$u_AccountSelector as AccountSelector, index_d$u_InlineAccountId as InlineAccountId, index_d$u_useAccountInfo as useAccountInfo };
 }
 
  namespace index_d$t {
+  export {  };
+}
+
+ namespace index_d$s {
   export {  };
 }
 
@@ -57,14 +55,14 @@ import { Terminal } from '@yuants/protocol';
  const ready$: ReplaySubject<unknown>;
  const error$: ReplaySubject<unknown>;
 
- const index_d$s_createPersistBehaviorSubject: typeof createPersistBehaviorSubject;
- const index_d$s_error$: typeof error$;
- const index_d$s_ready$: typeof ready$;
- namespace index_d$s {
-  export { index_d$s_createPersistBehaviorSubject as createPersistBehaviorSubject, index_d$s_error$ as error$, index_d$s_ready$ as ready$ };
+ const index_d$r_createPersistBehaviorSubject: typeof createPersistBehaviorSubject;
+ const index_d$r_error$: typeof error$;
+ const index_d$r_ready$: typeof ready$;
+ namespace index_d$r {
+  export { index_d$r_createPersistBehaviorSubject as createPersistBehaviorSubject, index_d$r_error$ as error$, index_d$r_ready$ as ready$ };
 }
 
- namespace index_d$r {
+ namespace index_d$q {
   export {  };
 }
 
@@ -72,22 +70,22 @@ import { Terminal } from '@yuants/protocol';
  const executeCommand: (id: string, params?: {}) => Promise<void>;
  const CommandCenter: React$1.MemoExoticComponent<() => react_jsx_runtime.JSX.Element>;
 
- const index_d$q_CommandCenter: typeof CommandCenter;
- const index_d$q_executeCommand: typeof executeCommand;
- const index_d$q_registerCommand: typeof registerCommand;
- namespace index_d$q {
-  export { index_d$q_CommandCenter as CommandCenter, index_d$q_executeCommand as executeCommand, index_d$q_registerCommand as registerCommand };
+ const index_d$p_CommandCenter: typeof CommandCenter;
+ const index_d$p_executeCommand: typeof executeCommand;
+ const index_d$p_registerCommand: typeof registerCommand;
+ namespace index_d$p {
+  export { index_d$p_CommandCenter as CommandCenter, index_d$p_executeCommand as executeCommand, index_d$p_registerCommand as registerCommand };
 }
 
- namespace index_d$p {
+ namespace index_d$o {
   export {  };
 }
 
  const useValue: <T>(id: string, initialValue: T) => [T, (v: T) => void];
 
- const index_d$o_useValue: typeof useValue;
- namespace index_d$o {
-  export { index_d$o_useValue as useValue };
+ const index_d$n_useValue: typeof useValue;
+ namespace index_d$n {
+  export { index_d$n_useValue as useValue };
 }
 
 interface IDataRecordViewDef<T extends {}> {
@@ -109,16 +107,16 @@ interface IDataRecordViewDef<T extends {}> {
  */
  function DataRecordView<T extends {}>(props: IDataRecordViewDef<T>): react_jsx_runtime.JSX.Element;
 
- const index_d$n_DataRecordView: typeof DataRecordView;
- namespace index_d$n {
-  export { index_d$n_DataRecordView as DataRecordView };
-}
-
+ const index_d$m_DataRecordView: typeof DataRecordView;
  namespace index_d$m {
-  export {  };
+  export { index_d$m_DataRecordView as DataRecordView };
 }
 
  namespace index_d$l {
+  export {  };
+}
+
+ namespace index_d$k {
   export {  };
 }
 
@@ -129,13 +127,13 @@ interface IDataRecordViewDef<T extends {}> {
     pageParams: any;
 } | undefined>;
 
- const index_d$k_DesktopLayout: typeof DesktopLayout;
- const index_d$k_activePage$: typeof activePage$;
- namespace index_d$k {
-  export { index_d$k_DesktopLayout as DesktopLayout, index_d$k_activePage$ as activePage$ };
+ const index_d$j_DesktopLayout: typeof DesktopLayout;
+ const index_d$j_activePage$: typeof activePage$;
+ namespace index_d$j {
+  export { index_d$j_DesktopLayout as DesktopLayout, index_d$j_activePage$ as activePage$ };
 }
 
- namespace index_d$j {
+ namespace index_d$i {
   export {  };
 }
 
@@ -156,10 +154,10 @@ interface INpmPackagePullParams {
     version: string;
 }>;
 
- const index_d$i_loadTgzBlob: typeof loadTgzBlob;
- const index_d$i_resolveVersion: typeof resolveVersion;
- namespace index_d$i {
-  export { index_d$i_loadTgzBlob as loadTgzBlob, index_d$i_resolveVersion as resolveVersion };
+ const index_d$h_loadTgzBlob: typeof loadTgzBlob;
+ const index_d$h_resolveVersion: typeof resolveVersion;
+ namespace index_d$h {
+  export { index_d$h_loadTgzBlob as loadTgzBlob, index_d$h_resolveVersion as resolveVersion };
 }
 
 interface IFileSystemStatResult {
@@ -226,12 +224,12 @@ interface IOptions {
 }
  function resolve(x: string, options: IOptions): Promise<string>;
 
- const index_d$h_FsBackend$: typeof FsBackend$;
- const index_d$h_bundleCode: typeof bundleCode;
- const index_d$h_fs: typeof fs;
- const index_d$h_resolve: typeof resolve;
- namespace index_d$h {
-  export { index_d$h_FsBackend$ as FsBackend$, index_d$h_bundleCode as bundleCode, index_d$h_fs as fs, index_d$h_resolve as resolve };
+ const index_d$g_FsBackend$: typeof FsBackend$;
+ const index_d$g_bundleCode: typeof bundleCode;
+ const index_d$g_fs: typeof fs;
+ const index_d$g_resolve: typeof resolve;
+ namespace index_d$g {
+  export { index_d$g_FsBackend$ as FsBackend$, index_d$g_bundleCode as bundleCode, index_d$g_fs as fs, index_d$g_resolve as resolve };
 }
 
  function generateTemplates<T = any, S extends StrictRJSFSchema = RJSFSchema, F extends FormContextType = any>(): Partial<TemplatesType<T, S, F>>;
@@ -261,18 +259,18 @@ interface IOptions {
     uiSchema?: UiSchema<T, any, any> | undefined;
 } | undefined) => Promise<T>;
 
- const index_d$g_Form: typeof Form;
- const index_d$g_Theme: typeof Theme;
- const index_d$g_generateForm: typeof generateForm;
- const index_d$g_generateTemplates: typeof generateTemplates;
- const index_d$g_generateTheme: typeof generateTheme;
- const index_d$g_generateWidgets: typeof generateWidgets;
- const index_d$g_showForm: typeof showForm;
- namespace index_d$g {
-  export { index_d$g_Form as Form, _default$1 as Templates, index_d$g_Theme as Theme, _default as Widgets, Form as default, index_d$g_generateForm as generateForm, index_d$g_generateTemplates as generateTemplates, index_d$g_generateTheme as generateTheme, index_d$g_generateWidgets as generateWidgets, index_d$g_showForm as showForm };
+ const index_d$f_Form: typeof Form;
+ const index_d$f_Theme: typeof Theme;
+ const index_d$f_generateForm: typeof generateForm;
+ const index_d$f_generateTemplates: typeof generateTemplates;
+ const index_d$f_generateTheme: typeof generateTheme;
+ const index_d$f_generateWidgets: typeof generateWidgets;
+ const index_d$f_showForm: typeof showForm;
+ namespace index_d$f {
+  export { index_d$f_Form as Form, _default$1 as Templates, index_d$f_Theme as Theme, _default as Widgets, Form as default, index_d$f_generateForm as generateForm, index_d$f_generateTemplates as generateTemplates, index_d$f_generateTheme as generateTheme, index_d$f_generateWidgets as generateWidgets, index_d$f_showForm as showForm };
 }
 
- namespace index_d$f {
+ namespace index_d$e {
   export {  };
 }
 
@@ -347,20 +345,20 @@ interface IPivotTableProps<T> {
     close: (id: string) => void;
 };
 
- const index_d$e_Button: typeof Button;
- const index_d$e_DataView: typeof DataView;
-type index_d$e_IPivotTableProps<T> = IPivotTableProps<T>;
- const index_d$e_ListView: typeof ListView;
- const index_d$e_PivotTable: typeof PivotTable;
- const index_d$e_SortableList: typeof SortableList;
- const index_d$e_TableView: typeof TableView;
- const index_d$e_Toast: typeof Toast;
-type index_d$e_ToastProps = ToastProps;
- namespace index_d$e {
-  export { index_d$e_Button as Button, index_d$e_DataView as DataView, type index_d$e_IPivotTableProps as IPivotTableProps, index_d$e_ListView as ListView, index_d$e_PivotTable as PivotTable, index_d$e_SortableList as SortableList, index_d$e_TableView as TableView, index_d$e_Toast as Toast, type index_d$e_ToastProps as ToastProps };
+ const index_d$d_Button: typeof Button;
+ const index_d$d_DataView: typeof DataView;
+type index_d$d_IPivotTableProps<T> = IPivotTableProps<T>;
+ const index_d$d_ListView: typeof ListView;
+ const index_d$d_PivotTable: typeof PivotTable;
+ const index_d$d_SortableList: typeof SortableList;
+ const index_d$d_TableView: typeof TableView;
+ const index_d$d_Toast: typeof Toast;
+type index_d$d_ToastProps = ToastProps;
+ namespace index_d$d {
+  export { index_d$d_Button as Button, index_d$d_DataView as DataView, type index_d$d_IPivotTableProps as IPivotTableProps, index_d$d_ListView as ListView, index_d$d_PivotTable as PivotTable, index_d$d_SortableList as SortableList, index_d$d_TableView as TableView, index_d$d_Toast as Toast, type index_d$d_ToastProps as ToastProps };
 }
 
- namespace index_d$d {
+ namespace index_d$c {
   export {  };
 }
 
@@ -369,12 +367,12 @@ type index_d$e_ToastProps = ToastProps;
  */
  const Launch: React$1.MemoExoticComponent<() => react_jsx_runtime.JSX.Element>;
 
- const index_d$c_Launch: typeof Launch;
- namespace index_d$c {
-  export { index_d$c_Launch as Launch };
+ const index_d$b_Launch: typeof Launch;
+ namespace index_d$b {
+  export { index_d$b_Launch as Launch };
 }
 
- namespace index_d$b {
+ namespace index_d$a {
   export {  };
 }
 
@@ -393,11 +391,11 @@ interface IInterleavingConfig {
 }
  const InterleavingTraderConfig$: BehaviorSubject<IInterleavingConfig | undefined>;
 
-type index_d$a_IInterleavingConfig = IInterleavingConfig;
-type index_d$a_IInterleavingConfigItem = IInterleavingConfigItem;
- const index_d$a_InterleavingTraderConfig$: typeof InterleavingTraderConfig$;
- namespace index_d$a {
-  export { type index_d$a_IInterleavingConfig as IInterleavingConfig, type index_d$a_IInterleavingConfigItem as IInterleavingConfigItem, index_d$a_InterleavingTraderConfig$ as InterleavingTraderConfig$ };
+type index_d$9_IInterleavingConfig = IInterleavingConfig;
+type index_d$9_IInterleavingConfigItem = IInterleavingConfigItem;
+ const index_d$9_InterleavingTraderConfig$: typeof InterleavingTraderConfig$;
+ namespace index_d$9 {
+  export { type index_d$9_IInterleavingConfig as IInterleavingConfig, type index_d$9_IInterleavingConfigItem as IInterleavingConfigItem, index_d$9_InterleavingTraderConfig$ as InterleavingTraderConfig$ };
 }
 
  class ErrorBoundary extends React$1.Component<{
@@ -452,41 +450,28 @@ interface IPage {
 } | undefined;
  const usePageId: () => string;
 
- const index_d$9_AvailableComponents: typeof AvailableComponents;
-type index_d$9_ErrorBoundary = ErrorBoundary;
- const index_d$9_ErrorBoundary: typeof ErrorBoundary;
- const index_d$9_LocalizePageTitle: typeof LocalizePageTitle;
- const index_d$9_Page: typeof Page;
- const index_d$9_pageRegistered$: typeof pageRegistered$;
- const index_d$9_registerPage: typeof registerPage;
- const index_d$9_usePageId: typeof usePageId;
- const index_d$9_usePageParams: typeof usePageParams;
- const index_d$9_usePageTitle: typeof usePageTitle;
- const index_d$9_usePageType: typeof usePageType;
- const index_d$9_usePageViewport: typeof usePageViewport;
- namespace index_d$9 {
-  export { index_d$9_AvailableComponents as AvailableComponents, index_d$9_ErrorBoundary as ErrorBoundary, index_d$9_LocalizePageTitle as LocalizePageTitle, index_d$9_Page as Page, index_d$9_pageRegistered$ as pageRegistered$, index_d$9_registerPage as registerPage, index_d$9_usePageId as usePageId, index_d$9_usePageParams as usePageParams, index_d$9_usePageTitle as usePageTitle, index_d$9_usePageType as usePageType, index_d$9_usePageViewport as usePageViewport };
-}
-
+ const index_d$8_AvailableComponents: typeof AvailableComponents;
+type index_d$8_ErrorBoundary = ErrorBoundary;
+ const index_d$8_ErrorBoundary: typeof ErrorBoundary;
+ const index_d$8_LocalizePageTitle: typeof LocalizePageTitle;
+ const index_d$8_Page: typeof Page;
+ const index_d$8_pageRegistered$: typeof pageRegistered$;
+ const index_d$8_registerPage: typeof registerPage;
+ const index_d$8_usePageId: typeof usePageId;
+ const index_d$8_usePageParams: typeof usePageParams;
+ const index_d$8_usePageTitle: typeof usePageTitle;
+ const index_d$8_usePageType: typeof usePageType;
+ const index_d$8_usePageViewport: typeof usePageViewport;
  namespace index_d$8 {
-  export {  };
+  export { index_d$8_AvailableComponents as AvailableComponents, index_d$8_ErrorBoundary as ErrorBoundary, index_d$8_LocalizePageTitle as LocalizePageTitle, index_d$8_Page as Page, index_d$8_pageRegistered$ as pageRegistered$, index_d$8_registerPage as registerPage, index_d$8_usePageId as usePageId, index_d$8_usePageParams as usePageParams, index_d$8_usePageTitle as usePageTitle, index_d$8_usePageType as usePageType, index_d$8_usePageViewport as usePageViewport };
 }
 
  namespace index_d$7 {
   export {  };
 }
 
- const supabase: _supabase_supabase_js.SupabaseClient<any, "public", any>;
- const authState$: BehaviorSubject<{
-    user: User;
-    refresh_token: string;
-    access_token: string;
-} | undefined>;
-
- const index_d$6_authState$: typeof authState$;
- const index_d$6_supabase: typeof supabase;
  namespace index_d$6 {
-  export { index_d$6_authState$ as authState$, index_d$6_supabase as supabase };
+  export {  };
 }
 
 /**
@@ -545,11 +530,8 @@ type index_d$5_IAssociationRule = IAssociationRule;
   export {  };
 }
 
- const ensureAuthenticated: () => Promise<void>;
-
- const index_d$1_ensureAuthenticated: typeof ensureAuthenticated;
  namespace index_d$1 {
-  export { index_d$1_ensureAuthenticated as ensureAuthenticated };
+  export {  };
 }
 
  const isShowHome$: rxjs.BehaviorSubject<boolean | undefined>;
@@ -611,6 +593,6 @@ type index_d_IHostConfigItem = IHostConfigItem;
   export { index_d_DarkModeEffect as DarkModeEffect, index_d_DarkModeSetting$ as DarkModeSetting$, index_d_DarkmodeSwitch as DarkmodeSwitch, index_d_FullScreenButton as FullScreenButton, index_d_HomePage as HomePage, type index_d_IHostConfigItem as IHostConfigItem, index_d_OHLCIdList$ as OHLCIdList$, index_d_currentHostConfig$ as currentHostConfig$, index_d_hostConfigList$ as hostConfigList$, index_d_initAction$ as initAction$, index_d_isDarkMode$ as isDarkMode$, index_d_isShowHome$ as isShowHome$, index_d_network$ as network$, index_d_toggleShowHome as toggleShowHome, index_d_useIsDarkMode as useIsDarkMode, index_d_usePageClosingConfirm as usePageClosingConfirm };
 }
 
-export { index_d$w as AccountComposition, index_d$v as AccountInfo, index_d$u as AccountRiskInfo, index_d$t as Agent, index_d$s as BIOS, index_d$r as Chart, index_d$q as CommandCenter, index_d$p as Copilot, index_d$o as Data, index_d$n as DataRecord, index_d$m as DataSeries, index_d$l as Deploy, index_d$k as DesktopLayout, index_d$j as Editor, index_d$i as Extensions, index_d$h as FileSystem, index_d$g as Form, index_d$f as Fund, index_d$e as Interactive, index_d$d as Kernel, index_d$c as Launch, index_d$b as Market, index_d$a as Order, index_d$9 as Pages, index_d$8 as Products, index_d$7 as SQL, index_d$6 as SupaBase, index_d$5 as System, index_d$4 as Terminals, index_d$3 as TradeCopier, index_d$2 as TransferOrder, index_d$1 as User, index_d as Workbench };
+export { index_d$v as AccountComposition, index_d$u as AccountInfo, index_d$t as AccountRiskInfo, index_d$s as Agent, index_d$r as BIOS, index_d$q as Chart, index_d$p as CommandCenter, index_d$o as Copilot, index_d$n as Data, index_d$m as DataRecord, index_d$l as DataSeries, index_d$k as Deploy, index_d$j as DesktopLayout, index_d$i as Editor, index_d$h as Extensions, index_d$g as FileSystem, index_d$f as Form, index_d$e as Fund, index_d$d as Interactive, index_d$c as Kernel, index_d$b as Launch, index_d$a as Market, index_d$9 as Order, index_d$8 as Pages, index_d$7 as Products, index_d$6 as SQL, index_d$5 as System, index_d$4 as Terminals, index_d$3 as TradeCopier, index_d$2 as TransferOrder, index_d$1 as User, index_d as Workbench };
 
 }
