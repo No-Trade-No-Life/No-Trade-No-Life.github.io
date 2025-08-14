@@ -190,6 +190,8 @@ interface IFileSystemBackend {
  */
  const bundleCode: (entry: string, externals: string[]) => Promise<string>;
 
+ const createFileSystemBehaviorSubject: <T>(key: string, initialValue: T) => BehaviorSubject<T | undefined>;
+
 interface PackageJson {
     name?: string;
     main?: string;
@@ -226,10 +228,11 @@ interface IOptions {
 
  const index_d$f_FsBackend$: typeof FsBackend$;
  const index_d$f_bundleCode: typeof bundleCode;
+ const index_d$f_createFileSystemBehaviorSubject: typeof createFileSystemBehaviorSubject;
  const index_d$f_fs: typeof fs;
  const index_d$f_resolve: typeof resolve;
  namespace index_d$f {
-  export { index_d$f_FsBackend$ as FsBackend$, index_d$f_bundleCode as bundleCode, index_d$f_fs as fs, index_d$f_resolve as resolve };
+  export { index_d$f_FsBackend$ as FsBackend$, index_d$f_bundleCode as bundleCode, index_d$f_createFileSystemBehaviorSubject as createFileSystemBehaviorSubject, index_d$f_fs as fs, index_d$f_resolve as resolve };
 }
 
  function generateTemplates<T = any, S extends StrictRJSFSchema = RJSFSchema, F extends FormContextType = any>(): Partial<TemplatesType<T, S, F>>;
@@ -506,6 +509,7 @@ type index_d$4_IAssociationRule = IAssociationRule;
     terminal_id: string;
 }) => react_jsx_runtime.JSX.Element;
 
+ const hostUrl$: BehaviorSubject<string | null>;
  const terminal$: Observable<Terminal | null>;
  const useTerminal: () => Terminal | null | undefined;
 
@@ -514,12 +518,13 @@ type index_d$4_IAssociationRule = IAssociationRule;
  const useTick: (datasource_id: string, product_id: string) => rxjs.Observable<ITick>;
 
  const index_d$3_InlineTerminalId: typeof InlineTerminalId;
+ const index_d$3_hostUrl$: typeof hostUrl$;
  const index_d$3_isTerminalConnected$: typeof isTerminalConnected$;
  const index_d$3_terminal$: typeof terminal$;
  const index_d$3_useTerminal: typeof useTerminal;
  const index_d$3_useTick: typeof useTick;
  namespace index_d$3 {
-  export { index_d$3_InlineTerminalId as InlineTerminalId, index_d$3_isTerminalConnected$ as isTerminalConnected$, index_d$3_terminal$ as terminal$, index_d$3_useTerminal as useTerminal, index_d$3_useTick as useTick };
+  export { index_d$3_InlineTerminalId as InlineTerminalId, index_d$3_hostUrl$ as hostUrl$, index_d$3_isTerminalConnected$ as isTerminalConnected$, index_d$3_terminal$ as terminal$, index_d$3_useTerminal as useTerminal, index_d$3_useTick as useTick };
 }
 
  namespace index_d$2 {
