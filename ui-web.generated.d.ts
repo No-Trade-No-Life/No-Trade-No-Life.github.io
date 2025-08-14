@@ -3,7 +3,7 @@ declare module "@yuants/ui-web" {
 import * as react_jsx_runtime from 'react/jsx-runtime';
 import React$1, { ComponentType } from 'react';
 import * as rxjs from 'rxjs';
-import { BehaviorSubject, ReplaySubject, Subject, Observable } from 'rxjs';
+import { BehaviorSubject, ReplaySubject, Observable, Subject } from 'rxjs';
 import * as _yuants_data_account from '@yuants/data-account';
 import { ColumnDef, Table, SortingState, OnChangeFn, GroupingState, VisibilityState, ColumnFiltersState, ExpandedState } from '@tanstack/react-table';
 import { JSONSchema7 } from 'json-schema';
@@ -12,8 +12,9 @@ import { StrictRJSFSchema, RJSFSchema, FormContextType, TemplatesType, RegistryW
 import { ButtonProps } from '@douyinfe/semi-ui/lib/es/button';
 import { UniqueIdentifier } from '@dnd-kit/core';
 import { ToastReactProps } from '@douyinfe/semi-ui/lib/es/toast';
-import { ITick } from '@yuants/data-model';
+import * as _yuants_protocol from '@yuants/protocol';
 import { Terminal } from '@yuants/protocol';
+import { ITick } from '@yuants/data-model';
 
  namespace index_d$u {
   export {  };
@@ -49,17 +50,25 @@ import { Terminal } from '@yuants/protocol';
  const createPersistBehaviorSubject: <T>(key: string, initialValue: T) => BehaviorSubject<T | undefined>;
 
 /**
+ * @public
+ */
+ const Launch: React$1.MemoExoticComponent<(props: {
+    children: React$1.ReactNode;
+}) => react_jsx_runtime.JSX.Element>;
+
+/**
  * A subject that emits a single value when the workspace is ready.
  * @public
  */
  const ready$: ReplaySubject<unknown>;
  const error$: ReplaySubject<unknown>;
 
+ const index_d$q_Launch: typeof Launch;
  const index_d$q_createPersistBehaviorSubject: typeof createPersistBehaviorSubject;
  const index_d$q_error$: typeof error$;
  const index_d$q_ready$: typeof ready$;
  namespace index_d$q {
-  export { index_d$q_createPersistBehaviorSubject as createPersistBehaviorSubject, index_d$q_error$ as error$, index_d$q_ready$ as ready$ };
+  export { index_d$q_Launch as Launch, index_d$q_createPersistBehaviorSubject as createPersistBehaviorSubject, index_d$q_error$ as error$, index_d$q_ready$ as ready$ };
 }
 
  namespace index_d$p {
@@ -365,18 +374,17 @@ type index_d$c_ToastProps = ToastProps;
   export {  };
 }
 
-/**
- * @public
- */
- const Launch: React$1.MemoExoticComponent<() => react_jsx_runtime.JSX.Element>;
-
- const index_d$a_Launch: typeof Launch;
  namespace index_d$a {
-  export { index_d$a_Launch as Launch };
+  export {  };
 }
 
+ const hostUrl$: BehaviorSubject<string | null>;
+ const terminal$: Observable<Terminal | null>;
+
+ const index_d$9_hostUrl$: typeof hostUrl$;
+ const index_d$9_terminal$: typeof terminal$;
  namespace index_d$9 {
-  export {  };
+  export { index_d$9_hostUrl$ as hostUrl$, index_d$9_terminal$ as terminal$ };
 }
 
 interface IInterleavingConfigItem {
@@ -416,7 +424,7 @@ type index_d$8_IInterleavingConfigItem = IInterleavingConfigItem;
         hasError: boolean;
         error: any;
     };
-    render(): string | number | boolean | react_jsx_runtime.JSX.Element | Iterable<React$1.ReactNode> | null | undefined;
+    render(): string | number | boolean | Iterable<React$1.ReactNode> | react_jsx_runtime.JSX.Element | null | undefined;
 }
 
  const LocalizePageTitle: React$1.ComponentType<{
@@ -509,9 +517,7 @@ type index_d$4_IAssociationRule = IAssociationRule;
     terminal_id: string;
 }) => react_jsx_runtime.JSX.Element;
 
- const hostUrl$: BehaviorSubject<string | null>;
- const terminal$: Observable<Terminal | null>;
- const useTerminal: () => Terminal | null | undefined;
+ const useTerminal: () => _yuants_protocol.Terminal | null | undefined;
 
  const isTerminalConnected$: rxjs.Observable<boolean>;
 
@@ -594,6 +600,6 @@ type index_d_IHostConfigItem = IHostConfigItem;
   export { index_d_DarkModeEffect as DarkModeEffect, index_d_DarkModeSetting$ as DarkModeSetting$, index_d_DarkmodeSwitch as DarkmodeSwitch, index_d_FullScreenButton as FullScreenButton, index_d_HomePage as HomePage, type index_d_IHostConfigItem as IHostConfigItem, index_d_OHLCIdList$ as OHLCIdList$, index_d_currentHostConfig$ as currentHostConfig$, index_d_hostConfigList$ as hostConfigList$, index_d_initAction$ as initAction$, index_d_isDarkMode$ as isDarkMode$, index_d_isShowHome$ as isShowHome$, index_d_network$ as network$, index_d_toggleShowHome as toggleShowHome, index_d_useIsDarkMode as useIsDarkMode, index_d_usePageClosingConfirm as usePageClosingConfirm };
 }
 
-export { index_d$u as AccountComposition, index_d$t as AccountInfo, index_d$s as AccountRiskInfo, index_d$r as Agent, index_d$q as BIOS, index_d$p as Chart, index_d$o as CommandCenter, index_d$n as Copilot, index_d$m as Data, index_d$l as DataRecord, index_d$k as DataSeries, index_d$j as Deploy, index_d$i as DesktopLayout, index_d$h as Editor, index_d$g as Extensions, index_d$f as FileSystem, index_d$e as Form, index_d$d as Fund, index_d$c as Interactive, index_d$b as Kernel, index_d$a as Launch, index_d$9 as Market, index_d$8 as Order, index_d$7 as Pages, index_d$6 as Products, index_d$5 as SQL, index_d$4 as System, index_d$3 as Terminals, index_d$2 as TradeCopier, index_d$1 as TransferOrder, index_d as Workbench };
+export { index_d$u as AccountComposition, index_d$t as AccountInfo, index_d$s as AccountRiskInfo, index_d$r as Agent, index_d$q as BIOS, index_d$p as Chart, index_d$o as CommandCenter, index_d$n as Copilot, index_d$m as Data, index_d$l as DataRecord, index_d$k as DataSeries, index_d$j as Deploy, index_d$i as DesktopLayout, index_d$h as Editor, index_d$g as Extensions, index_d$f as FileSystem, index_d$e as Form, index_d$d as Fund, index_d$c as Interactive, index_d$b as Kernel, index_d$a as Market, index_d$9 as Network, index_d$8 as Order, index_d$7 as Pages, index_d$6 as Products, index_d$5 as SQL, index_d$4 as System, index_d$3 as Terminals, index_d$2 as TradeCopier, index_d$1 as TransferOrder, index_d as Workbench };
 
 }
