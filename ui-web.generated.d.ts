@@ -542,7 +542,8 @@ type index_d$5_IAssociationRule = IAssociationRule;
 }
 
  const CSV: {
-    parse: <T = any>(csvString: string) => T[];
+    readFile: <T = any>(filename: string) => Promise<T[]>;
+    parse: <T_1 = any>(csvString: string) => T_1[];
     stringify: (data: any[]) => string;
 };
 
