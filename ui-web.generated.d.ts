@@ -11,6 +11,7 @@ import { ThemeProps, FormProps } from '@rjsf/core';
 import { StrictRJSFSchema, RJSFSchema, FormContextType, TemplatesType, RegistryWidgetsType, UiSchema } from '@rjsf/utils';
 import { ButtonProps } from '@douyinfe/semi-ui/lib/es/button';
 import { UniqueIdentifier } from '@dnd-kit/core';
+import { SwitchProps } from '@douyinfe/semi-ui/lib/es/switch';
 import { ToastReactProps } from '@douyinfe/semi-ui/lib/es/toast';
 import * as _yuants_protocol from '@yuants/protocol';
 import { Terminal } from '@yuants/protocol';
@@ -295,7 +296,7 @@ interface IOptions {
  * - We need to know whether the backend click event is processing or not.
  */
  const Button: React$1.MemoExoticComponent<(props: Omit<ButtonProps, 'onClick' | 'loading'> & {
-    onClick: () => Promise<any>;
+    onClick?: () => any;
 }) => react_jsx_runtime.JSX.Element>;
 
  function DataView<T, K>(props: {
@@ -342,9 +343,86 @@ interface IPivotTableProps<T> {
     onSort: (items: UniqueIdentifier[]) => void;
 }) => react_jsx_runtime.JSX.Element;
 
+/**
+ * Yuan Switch Component
+ *
+ * - Switch must display loading status after clicking
+ * - Switch displays loading if and only if click event processing
+ * - We need to know whether the backend click event is processing or not.
+ */
+ const Switch: React$1.MemoExoticComponent<(props: Omit<SwitchProps, "loading" | "onChange"> & {
+    onChange: (checked: boolean) => any;
+}) => react_jsx_runtime.JSX.Element>;
+
  function TableView<T>(props: {
     table: Table<T>;
 }): react_jsx_runtime.JSX.Element;
+
+interface ITimeSeriesChartConfig {
+    data: Array<{
+        type: 'csv';
+        /**
+         * 数据源的文件名
+         */
+        filename: string;
+        /**
+         * 数据列的名称
+         */
+        time_column_name: string;
+    }>;
+    views: Array<{
+        name: string;
+        time_ref: {
+            data_index: number;
+            column_name: string;
+        };
+        panes: Array<{
+            series: Array<{
+                /**
+                 * 图表类型
+                 *
+                 * 不同的图表类型对应不同的 refs 数组内容配置：
+                 *
+                 * - 'line': 折线图. refs[0] 是数据的值
+                 * - 'bar': 柱状图. refs[0] 是数据的值
+                 * - 'ohlc': K线图. refs[0] 是开盘价, refs[1] 是最高价, refs[2] 是最低价, refs[3] 是收盘价, refs[4] 是成交量
+                 * - 'index': 位置索引图，标记一个数据位置. refs[0] 是位置索引
+                 */
+                type: string;
+                /**
+                 * 对数据的引用
+                 */
+                refs: Array<{
+                    /**
+                     * 数据源的索引
+                     */
+                    data_index: number;
+                    /**
+                     * 数据列的名称
+                     */
+                    column_name: string;
+                }>;
+            }>;
+        }>;
+    }>;
+}
+/**
+ * 时序图表视图组件
+ *
+ * 基于 lightweight-charts 库，实现图表展示数据
+ *
+ * 图表的核心是配置，从配置中定义数据源的获取方式、图表类型、样式等。
+ *
+ * 图表配置从一个 JSON 文件中获取
+ *
+ * - 支持多数据源
+ * - 支持多种图表类型 (OHLC, Line, Bar, ...etc)
+ * - 支持多个视图配置
+ *
+ */
+ const TimeSeriesChartView: (props: {
+    config: ITimeSeriesChartConfig;
+}) => react_jsx_runtime.JSX.Element;
 
  type ToastProps = string | Omit<ToastReactProps, 'type'>;
 /**
@@ -361,14 +439,17 @@ interface IPivotTableProps<T> {
  const index_d$d_Button: typeof Button;
  const index_d$d_DataView: typeof DataView;
 type index_d$d_IPivotTableProps<T> = IPivotTableProps<T>;
+type index_d$d_ITimeSeriesChartConfig = ITimeSeriesChartConfig;
  const index_d$d_ListView: typeof ListView;
  const index_d$d_PivotTable: typeof PivotTable;
  const index_d$d_SortableList: typeof SortableList;
+ const index_d$d_Switch: typeof Switch;
  const index_d$d_TableView: typeof TableView;
+ const index_d$d_TimeSeriesChartView: typeof TimeSeriesChartView;
  const index_d$d_Toast: typeof Toast;
 type index_d$d_ToastProps = ToastProps;
  namespace index_d$d {
-  export { index_d$d_Button as Button, index_d$d_DataView as DataView, type index_d$d_IPivotTableProps as IPivotTableProps, index_d$d_ListView as ListView, index_d$d_PivotTable as PivotTable, index_d$d_SortableList as SortableList, index_d$d_TableView as TableView, index_d$d_Toast as Toast, type index_d$d_ToastProps as ToastProps };
+  export { index_d$d_Button as Button, index_d$d_DataView as DataView, type index_d$d_IPivotTableProps as IPivotTableProps, type index_d$d_ITimeSeriesChartConfig as ITimeSeriesChartConfig, index_d$d_ListView as ListView, index_d$d_PivotTable as PivotTable, index_d$d_SortableList as SortableList, index_d$d_Switch as Switch, index_d$d_TableView as TableView, index_d$d_TimeSeriesChartView as TimeSeriesChartView, index_d$d_Toast as Toast, type index_d$d_ToastProps as ToastProps };
 }
 
  namespace index_d$c {
