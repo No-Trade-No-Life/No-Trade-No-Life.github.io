@@ -182,6 +182,8 @@ interface IFileSystemBackend {
     readFileAsBase64(path: string): Promise<string>;
     readFileAsBlob(path: string): Promise<Blob>;
     writeFile(path: string, content: FileSystemWriteChunkType): Promise<void>;
+    createReadableStream(path: string): Promise<ReadableStream>;
+    createWritableStream(path: string): Promise<WritableStream>;
     mkdir(path: string): Promise<void>;
     rm(path: string): Promise<void>;
     exists(path: string): Promise<boolean>;
@@ -189,9 +191,7 @@ interface IFileSystemBackend {
 }
 
  const FsBackend$: BehaviorSubject<IFileSystemBackend>;
- const fs: IFileSystemBackend & {
-    ensureDir: (path: string) => Promise<void>;
-};
+ const fs: IFileSystemBackend;
 
 /**
  * Bundle code from entry
@@ -624,7 +624,16 @@ type index_d$5_IAssociationRule = IAssociationRule;
 }
 
  const CSV: {
+    escapeCellValue: (cell: any) => string;
     readFile: <T = any>(filename: string) => Promise<T[]>;
+    writeFile: (filename: string, data: any[]) => Promise<void>;
+    /**
+     * 通过原始表格数据写入 CSV 文件
+     * @param filename 写入的文件名
+     * @param data 原始表格数据
+     * @param transpose 是否转置数据 (行列互换), 默认不转置
+     */
+    writeFileFromRawTable: (filename: string, data: any[][], transpose?: boolean) => Promise<void>;
     parse: <T_1 = any>(csvString: string) => T_1[];
     stringify: (data: any[]) => string;
 };
