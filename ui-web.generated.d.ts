@@ -674,13 +674,12 @@ interface IHostConfigItem {
     name: string;
     host_url: string;
 }
- const hostConfigList$: BehaviorSubject<IHostConfigItem[] | undefined>;
- const currentHostConfig$: BehaviorSubject<IHostConfigItem | null | undefined>;
+ const hostConfigList$: rxjs.BehaviorSubject<IHostConfigItem[] | undefined>;
+ const currentHostConfig$: rxjs.BehaviorSubject<IHostConfigItem | null | undefined>;
  const initAction$: ReplaySubject<{
     type: string;
     payload: any;
 }>;
- const OHLCIdList$: BehaviorSubject<string[]>;
 
  const index_d_DarkModeEffect: typeof DarkModeEffect;
  const index_d_DarkModeSetting$: typeof DarkModeSetting$;
@@ -688,7 +687,6 @@ interface IHostConfigItem {
  const index_d_FullScreenButton: typeof FullScreenButton;
  const index_d_HomePage: typeof HomePage;
 type index_d_IHostConfigItem = IHostConfigItem;
- const index_d_OHLCIdList$: typeof OHLCIdList$;
  const index_d_currentHostConfig$: typeof currentHostConfig$;
  const index_d_hostConfigList$: typeof hostConfigList$;
  const index_d_initAction$: typeof initAction$;
@@ -699,7 +697,7 @@ type index_d_IHostConfigItem = IHostConfigItem;
  const index_d_useIsDarkMode: typeof useIsDarkMode;
  const index_d_usePageClosingConfirm: typeof usePageClosingConfirm;
  namespace index_d {
-  export { index_d_DarkModeEffect as DarkModeEffect, index_d_DarkModeSetting$ as DarkModeSetting$, index_d_DarkmodeSwitch as DarkmodeSwitch, index_d_FullScreenButton as FullScreenButton, index_d_HomePage as HomePage, type index_d_IHostConfigItem as IHostConfigItem, index_d_OHLCIdList$ as OHLCIdList$, index_d_currentHostConfig$ as currentHostConfig$, index_d_hostConfigList$ as hostConfigList$, index_d_initAction$ as initAction$, index_d_isDarkMode$ as isDarkMode$, index_d_isShowHome$ as isShowHome$, index_d_network$ as network$, index_d_toggleShowHome as toggleShowHome, index_d_useIsDarkMode as useIsDarkMode, index_d_usePageClosingConfirm as usePageClosingConfirm };
+  export { index_d_DarkModeEffect as DarkModeEffect, index_d_DarkModeSetting$ as DarkModeSetting$, index_d_DarkmodeSwitch as DarkmodeSwitch, index_d_FullScreenButton as FullScreenButton, index_d_HomePage as HomePage, type index_d_IHostConfigItem as IHostConfigItem, index_d_currentHostConfig$ as currentHostConfig$, index_d_hostConfigList$ as hostConfigList$, index_d_initAction$ as initAction$, index_d_isDarkMode$ as isDarkMode$, index_d_isShowHome$ as isShowHome$, index_d_network$ as network$, index_d_toggleShowHome as toggleShowHome, index_d_useIsDarkMode as useIsDarkMode, index_d_usePageClosingConfirm as usePageClosingConfirm };
 }
 
 export { index_d$v as AccountComposition, index_d$u as AccountInfo, index_d$t as AccountRiskInfo, index_d$s as Agent, index_d$r as BIOS, index_d$q as Chart, index_d$p as CommandCenter, index_d$o as Copilot, index_d$n as Data, index_d$m as DataRecord, index_d$l as DataSeries, index_d$k as Deploy, index_d$j as DesktopLayout, index_d$i as Editor, index_d$h as Extensions, index_d$g as FileSystem, index_d$f as Form, index_d$e as Fund, index_d$d as Interactive, index_d$c as Kernel, index_d$b as Market, index_d$a as Network, index_d$9 as Order, index_d$8 as Pages, index_d$7 as Products, index_d$6 as SQL, index_d$5 as System, index_d$4 as Terminals, index_d$3 as TradeCopier, index_d$2 as TransferOrder, index_d$1 as Util, index_d as Workbench };
