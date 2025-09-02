@@ -297,6 +297,10 @@ interface IOptions {
  */
  const Button: React$1.MemoExoticComponent<(props: Omit<ButtonProps, 'onClick' | 'loading'> & {
     onClick?: () => any;
+    doubleCheck?: {
+        title: React$1.ReactNode;
+        description?: React$1.ReactNode;
+    };
 }) => react_jsx_runtime.JSX.Element>;
 
  function DataView<T, K>(props: {
