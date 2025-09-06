@@ -99,6 +99,7 @@ import { ITick } from '@yuants/data-model';
 }
 
 interface IDataRecordViewDef<T extends {}> {
+    conflictKeys?: (keyof T)[];
     TYPE: string;
     columns: (ctx: {
         reloadData: () => Promise<void>;
