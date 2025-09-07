@@ -15,7 +15,7 @@ import { SwitchProps } from '@douyinfe/semi-ui/lib/es/switch';
 import { ToastReactProps } from '@douyinfe/semi-ui/lib/es/toast';
 import * as _yuants_protocol from '@yuants/protocol';
 import { Terminal } from '@yuants/protocol';
-import { ITick } from '@yuants/data-model';
+import { IQuote } from '@yuants/data-quote';
 
  namespace index_d$v {
   export {  };
@@ -608,7 +608,7 @@ type index_d$5_IAssociationRule = IAssociationRule;
 
  const isTerminalConnected$: rxjs.Observable<boolean>;
 
- const useTick: (datasource_id: string, product_id: string) => rxjs.Observable<ITick>;
+ const useTick: (datasource_id: string, product_id: string) => rxjs.Observable<IQuote>;
 
  const index_d$4_InlineTerminalId: typeof InlineTerminalId;
  const index_d$4_hostUrl$: typeof hostUrl$;
