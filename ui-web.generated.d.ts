@@ -537,7 +537,7 @@ interface IPage {
  const Page: React$1.MemoExoticComponent<(props: {
     page: IPage;
 }) => react_jsx_runtime.JSX.Element>;
- const usePageParams: () => any;
+ const usePageParams: <T = any>() => T;
  const usePageTitle: (title: string) => void;
  const usePageType: () => string;
  const usePageViewport: () => {
