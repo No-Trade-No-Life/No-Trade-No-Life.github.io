@@ -356,7 +356,7 @@ interface IPivotTableProps<T> {
  * - We need to know whether the backend click event is processing or not.
  */
  const Switch: React$1.MemoExoticComponent<(props: Omit<SwitchProps, "loading" | "onChange"> & {
-    onChange: (checked: boolean) => any;
+    onChange?: ((checked: boolean) => any) | undefined;
 }) => react_jsx_runtime.JSX.Element>;
 
  function TableView<T>(props: {
