@@ -374,6 +374,12 @@ interface ITimeSeriesChartConfig {
          * 数据列的名称
          */
         time_column_name: string;
+    } | {
+        type: 'promql';
+        query: string;
+        start_time: string;
+        end_time: string;
+        step: string;
     }>;
     views: Array<{
         name: string;
@@ -411,23 +417,6 @@ interface ITimeSeriesChartConfig {
         }>;
     }>;
 }
-/**
- * 时序图表视图组件
- *
- * 基于 lightweight-charts 库，实现图表展示数据
- *
- * 图表的核心是配置，从配置中定义数据源的获取方式、图表类型、样式等。
- *
- * 图表配置从一个 JSON 文件中获取
- *
- * - 支持多数据源
- * - 支持多种图表类型 (OHLC, Line, Bar, ...etc)
- * - 支持多个视图配置
- *
- */
- const TimeSeriesChartView: (props: {
-    config: ITimeSeriesChartConfig;
-}) => react_jsx_runtime.JSX.Element;
 
  type ToastProps = string | Omit<ToastReactProps, 'type'>;
 /**
@@ -450,11 +439,10 @@ type index_d$d_ITimeSeriesChartConfig = ITimeSeriesChartConfig;
  const index_d$d_SortableList: typeof SortableList;
  const index_d$d_Switch: typeof Switch;
  const index_d$d_TableView: typeof TableView;
- const index_d$d_TimeSeriesChartView: typeof TimeSeriesChartView;
  const index_d$d_Toast: typeof Toast;
 type index_d$d_ToastProps = ToastProps;
  namespace index_d$d {
-  export { index_d$d_Button as Button, index_d$d_DataView as DataView, type index_d$d_IPivotTableProps as IPivotTableProps, type index_d$d_ITimeSeriesChartConfig as ITimeSeriesChartConfig, index_d$d_ListView as ListView, index_d$d_PivotTable as PivotTable, index_d$d_SortableList as SortableList, index_d$d_Switch as Switch, index_d$d_TableView as TableView, index_d$d_TimeSeriesChartView as TimeSeriesChartView, index_d$d_Toast as Toast, type index_d$d_ToastProps as ToastProps };
+  export { index_d$d_Button as Button, index_d$d_DataView as DataView, type index_d$d_IPivotTableProps as IPivotTableProps, type index_d$d_ITimeSeriesChartConfig as ITimeSeriesChartConfig, index_d$d_ListView as ListView, index_d$d_PivotTable as PivotTable, index_d$d_SortableList as SortableList, index_d$d_Switch as Switch, index_d$d_TableView as TableView, index_d$d_Toast as Toast, type index_d$d_ToastProps as ToastProps };
 }
 
  namespace index_d$c {
