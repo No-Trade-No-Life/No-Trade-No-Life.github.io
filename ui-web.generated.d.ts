@@ -363,61 +363,6 @@ interface IPivotTableProps<T> {
     table: Table<T>;
 }): react_jsx_runtime.JSX.Element;
 
-interface ITimeSeriesChartConfig {
-    data: Array<{
-        type: 'csv';
-        /**
-         * 数据源的文件名
-         */
-        filename: string;
-        /**
-         * 数据列的名称
-         */
-        time_column_name: string;
-    } | {
-        type: 'promql';
-        query: string;
-        start_time: string;
-        end_time: string;
-        step: string;
-    }>;
-    views: Array<{
-        name: string;
-        time_ref: {
-            data_index: number;
-            column_name: string;
-        };
-        panes: Array<{
-            series: Array<{
-                /**
-                 * 图表类型
-                 *
-                 * 不同的图表类型对应不同的 refs 数组内容配置：
-                 *
-                 * - 'line': 折线图. refs[0] 是数据的值
-                 * - 'bar': 柱状图. refs[0] 是数据的值
-                 * - 'ohlc': K线图. refs[0] 是开盘价, refs[1] 是最高价, refs[2] 是最低价, refs[3] 是收盘价, refs[4] 是成交量
-                 * - 'index': 位置索引图，标记一个数据位置. refs[0] 是位置索引
-                 */
-                type: string;
-                /**
-                 * 对数据的引用
-                 */
-                refs: Array<{
-                    /**
-                     * 数据源的索引
-                     */
-                    data_index: number;
-                    /**
-                     * 数据列的名称
-                     */
-                    column_name: string;
-                }>;
-            }>;
-        }>;
-    }>;
-}
-
  type ToastProps = string | Omit<ToastReactProps, 'type'>;
 /**
  * Yuan Toast Component
@@ -433,7 +378,6 @@ interface ITimeSeriesChartConfig {
  const index_d$d_Button: typeof Button;
  const index_d$d_DataView: typeof DataView;
 type index_d$d_IPivotTableProps<T> = IPivotTableProps<T>;
-type index_d$d_ITimeSeriesChartConfig = ITimeSeriesChartConfig;
  const index_d$d_ListView: typeof ListView;
  const index_d$d_PivotTable: typeof PivotTable;
  const index_d$d_SortableList: typeof SortableList;
@@ -442,7 +386,7 @@ type index_d$d_ITimeSeriesChartConfig = ITimeSeriesChartConfig;
  const index_d$d_Toast: typeof Toast;
 type index_d$d_ToastProps = ToastProps;
  namespace index_d$d {
-  export { index_d$d_Button as Button, index_d$d_DataView as DataView, type index_d$d_IPivotTableProps as IPivotTableProps, type index_d$d_ITimeSeriesChartConfig as ITimeSeriesChartConfig, index_d$d_ListView as ListView, index_d$d_PivotTable as PivotTable, index_d$d_SortableList as SortableList, index_d$d_Switch as Switch, index_d$d_TableView as TableView, index_d$d_Toast as Toast, type index_d$d_ToastProps as ToastProps };
+  export { index_d$d_Button as Button, index_d$d_DataView as DataView, type index_d$d_IPivotTableProps as IPivotTableProps, index_d$d_ListView as ListView, index_d$d_PivotTable as PivotTable, index_d$d_SortableList as SortableList, index_d$d_Switch as Switch, index_d$d_TableView as TableView, index_d$d_Toast as Toast, type index_d$d_ToastProps as ToastProps };
 }
 
  namespace index_d$c {
