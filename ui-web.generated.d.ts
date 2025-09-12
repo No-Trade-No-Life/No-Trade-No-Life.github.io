@@ -575,9 +575,19 @@ type index_d$5_IAssociationRule = IAssociationRule;
     stringify: (data: any[]) => string;
 };
 
+ const ZIP: {
+    read: (zipFileBlob: Blob) => Promise<{
+        filename: string;
+        blob: Blob;
+        isDirectory: boolean;
+        isFile: boolean;
+    }[]>;
+};
+
  const index_d$1_CSV: typeof CSV;
+ const index_d$1_ZIP: typeof ZIP;
  namespace index_d$1 {
-  export { index_d$1_CSV as CSV };
+  export { index_d$1_CSV as CSV, index_d$1_ZIP as ZIP };
 }
 
  const isShowHome$: rxjs.BehaviorSubject<boolean | undefined>;
