@@ -1,5 +1,6 @@
 declare module "@yuants/ui-web" {
 /// <reference types="react" />
+import { JSONSchema7 } from 'json-schema';
 import * as react_jsx_runtime from 'react/jsx-runtime';
 import * as React$1 from 'react';
 import React__default, { ComponentType } from 'react';
@@ -7,7 +8,6 @@ import * as rxjs from 'rxjs';
 import { BehaviorSubject, ReplaySubject, Observable, Subject } from 'rxjs';
 import * as _yuants_data_account from '@yuants/data-account';
 import { ColumnDef, Table, SortingState, OnChangeFn, GroupingState, VisibilityState, ColumnFiltersState, ExpandedState } from '@tanstack/react-table';
-import { JSONSchema7 } from 'json-schema';
 import { ThemeProps, FormProps } from '@rjsf/core';
 import { StrictRJSFSchema, RJSFSchema, FormContextType, TemplatesType, RegistryWidgetsType, UiSchema } from '@rjsf/utils';
 import { ButtonProps } from '@douyinfe/semi-ui/lib/es/button';
@@ -18,8 +18,11 @@ import * as _yuants_protocol from '@yuants/protocol';
 import { Terminal } from '@yuants/protocol';
 import { IQuote } from '@yuants/data-quote';
 
+ const schemaOfAccountComposerConfig: JSONSchema7;
+
+ const index_d$v_schemaOfAccountComposerConfig: typeof schemaOfAccountComposerConfig;
  namespace index_d$v {
-  export {  };
+  export { index_d$v_schemaOfAccountComposerConfig as schemaOfAccountComposerConfig };
 }
 
  const AccountSelector: (props: {
