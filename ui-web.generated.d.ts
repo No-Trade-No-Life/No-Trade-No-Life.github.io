@@ -1,7 +1,8 @@
 declare module "@yuants/ui-web" {
 /// <reference types="react" />
 import * as react_jsx_runtime from 'react/jsx-runtime';
-import React$1, { ComponentType } from 'react';
+import * as React$1 from 'react';
+import React__default, { ComponentType } from 'react';
 import * as rxjs from 'rxjs';
 import { BehaviorSubject, ReplaySubject, Observable, Subject } from 'rxjs';
 import * as _yuants_data_account from '@yuants/data-account';
@@ -27,7 +28,7 @@ import { IQuote } from '@yuants/data-quote';
     candidates: string[];
 }) => react_jsx_runtime.JSX.Element;
 
- const InlineAccountId: React$1.MemoExoticComponent<(props: {
+ const InlineAccountId: React__default.MemoExoticComponent<(props: {
     account_id: string;
 }) => react_jsx_runtime.JSX.Element>;
 
@@ -53,8 +54,8 @@ import { IQuote } from '@yuants/data-quote';
 /**
  * @public
  */
- const Launch: React$1.MemoExoticComponent<(props: {
-    children: React$1.ReactNode;
+ const Launch: React__default.MemoExoticComponent<(props: {
+    children: React__default.ReactNode;
 }) => react_jsx_runtime.JSX.Element>;
 
 /**
@@ -78,7 +79,7 @@ import { IQuote } from '@yuants/data-quote';
 
  const registerCommand: (id: string, handler: (params: any) => void) => void;
  const executeCommand: (id: string, params?: {}) => Promise<void>;
- const CommandCenter: React$1.MemoExoticComponent<() => react_jsx_runtime.JSX.Element>;
+ const CommandCenter: React__default.MemoExoticComponent<() => react_jsx_runtime.JSX.Element>;
 
  const index_d$p_CommandCenter: typeof CommandCenter;
  const index_d$p_executeCommand: typeof executeCommand;
@@ -104,11 +105,11 @@ interface IDataRecordViewDef<T extends {}> {
     columns: (ctx: {
         reloadData: () => Promise<void>;
     }) => ColumnDef<T, any>[];
-    extraRecordActions?: React$1.ComponentType<{
+    extraRecordActions?: React__default.ComponentType<{
         reloadData: () => Promise<void>;
         record: T;
     }>;
-    extraHeaderActions?: React$1.ComponentType<{}>;
+    extraHeaderActions?: React__default.ComponentType<{}>;
     newRecord?: () => Partial<T>;
     beforeUpdateTrigger?: (x: T) => void | Promise<void>;
     schema?: JSONSchema7;
@@ -256,7 +257,7 @@ interface IOptions {
  function generateTheme<T = any, S extends StrictRJSFSchema = RJSFSchema, F extends FormContextType = any>(): ThemeProps<T, S, F>;
  const Theme: ThemeProps<any, RJSFSchema, any>;
  function generateForm<T = any, S extends StrictRJSFSchema = RJSFSchema, F extends FormContextType = any>(): ComponentType<FormProps<T, S, F>>;
- const Form: (props: Omit<FormProps<any, any, any>, 'validator'>) => React$1.ReactElement<FormProps<any, RJSFSchema, any>, string | React$1.JSXElementConstructor<any>>;
+ const Form: (props: Omit<FormProps<any, any, any>, 'validator'>) => React__default.ReactElement<FormProps<any, RJSFSchema, any>, string | React__default.JSXElementConstructor<any>>;
 
 /**
  * Request user to input data according to the schema.
@@ -296,11 +297,11 @@ interface IOptions {
  * - Button displays loading if and only if click event processing
  * - We need to know whether the backend click event is processing or not.
  */
- const Button: React$1.MemoExoticComponent<(props: Omit<ButtonProps, 'onClick' | 'loading'> & {
+ const Button: React__default.MemoExoticComponent<(props: Omit<ButtonProps, 'onClick' | 'loading'> & {
     onClick?: () => any;
     doubleCheck?: {
-        title: React$1.ReactNode;
-        description?: React$1.ReactNode;
+        title: React__default.ReactNode;
+        description?: React__default.ReactNode;
     };
 }) => react_jsx_runtime.JSX.Element>;
 
@@ -355,7 +356,7 @@ interface IPivotTableProps<T> {
  * - Switch displays loading if and only if click event processing
  * - We need to know whether the backend click event is processing or not.
  */
- const Switch: React$1.MemoExoticComponent<(props: Omit<SwitchProps, "loading" | "onChange"> & {
+ const Switch: React__default.MemoExoticComponent<(props: Omit<SwitchProps, "loading" | "onChange"> & {
     onChange?: ((checked: boolean) => any) | undefined;
 }) => react_jsx_runtime.JSX.Element>;
 
@@ -428,12 +429,12 @@ type index_d$9_IInterleavingConfigItem = IInterleavingConfigItem;
   export { type index_d$9_IInterleavingConfig as IInterleavingConfig, type index_d$9_IInterleavingConfigItem as IInterleavingConfigItem, index_d$9_InterleavingTraderConfig$ as InterleavingTraderConfig$ };
 }
 
- class ErrorBoundary extends React$1.Component<{
-    fallback?: React$1.ComponentType<{
+ class ErrorBoundary extends React__default.Component<{
+    fallback?: React__default.ComponentType<{
         error: any;
         reset: () => void;
     }>;
-    children: React$1.ReactNode;
+    children: React__default.ReactNode;
 }> {
     state: {
         hasError: boolean;
@@ -443,17 +444,17 @@ type index_d$9_IInterleavingConfigItem = IInterleavingConfigItem;
         hasError: boolean;
         error: any;
     };
-    render(): string | number | boolean | Iterable<React$1.ReactNode> | react_jsx_runtime.JSX.Element | null | undefined;
+    render(): string | number | boolean | Iterable<React__default.ReactNode> | react_jsx_runtime.JSX.Element | null | undefined;
 }
 
- const LocalizePageTitle: React$1.ComponentType<{
+ const LocalizePageTitle: React__default.ComponentType<{
     type: string;
     params?: any;
 }>;
 
- const AvailableComponents: Record<string, React$1.ComponentType>;
+ const AvailableComponents: Record<string, React__default.ComponentType>;
  const pageRegistered$: Subject<string>;
- const registerPage: (type: string, component: React$1.ComponentType) => void;
+ const registerPage: (type: string, component: React__default.ComponentType) => void;
 
 interface IPage {
     id: string;
@@ -466,7 +467,7 @@ interface IPage {
         y: number;
     };
 }
- const Page: React$1.MemoExoticComponent<(props: {
+ const Page: React__default.MemoExoticComponent<(props: {
     page: IPage;
 }) => react_jsx_runtime.JSX.Element>;
  const usePageParams: <T = any>() => T;
@@ -624,14 +625,19 @@ interface ITradeCopierConfig {
 
  const schemaOfTradeCopierConfig: JSONSchema7;
 
+ const TradeCopierDetail: React$1.MemoExoticComponent<(props: {
+    account_id: string;
+}) => react_jsx_runtime.JSX.Element>;
+
 type index_d$3_ITradeCopierConfig = ITradeCopierConfig;
 type index_d$3_ITradeCopierStrategyBase = ITradeCopierStrategyBase;
 type index_d$3_ITradeCopierStrategyConfig = ITradeCopierStrategyConfig;
 type index_d$3_ITradeCopierTradeConfig = ITradeCopierTradeConfig;
 type index_d$3_ITradeCopyRelation = ITradeCopyRelation;
+ const index_d$3_TradeCopierDetail: typeof TradeCopierDetail;
  const index_d$3_schemaOfTradeCopierConfig: typeof schemaOfTradeCopierConfig;
  namespace index_d$3 {
-  export { type index_d$3_ITradeCopierConfig as ITradeCopierConfig, type index_d$3_ITradeCopierStrategyBase as ITradeCopierStrategyBase, type index_d$3_ITradeCopierStrategyConfig as ITradeCopierStrategyConfig, type index_d$3_ITradeCopierTradeConfig as ITradeCopierTradeConfig, type index_d$3_ITradeCopyRelation as ITradeCopyRelation, index_d$3_schemaOfTradeCopierConfig as schemaOfTradeCopierConfig };
+  export { type index_d$3_ITradeCopierConfig as ITradeCopierConfig, type index_d$3_ITradeCopierStrategyBase as ITradeCopierStrategyBase, type index_d$3_ITradeCopierStrategyConfig as ITradeCopierStrategyConfig, type index_d$3_ITradeCopierTradeConfig as ITradeCopierTradeConfig, type index_d$3_ITradeCopyRelation as ITradeCopyRelation, index_d$3_TradeCopierDetail as TradeCopierDetail, index_d$3_schemaOfTradeCopierConfig as schemaOfTradeCopierConfig };
 }
 
  namespace index_d$2 {
@@ -670,7 +676,7 @@ type index_d$3_ITradeCopyRelation = ITradeCopyRelation;
 
  const isShowHome$: rxjs.BehaviorSubject<boolean | undefined>;
  const toggleShowHome: () => void;
- const HomePage: React$1.MemoExoticComponent<() => react_jsx_runtime.JSX.Element | null>;
+ const HomePage: React__default.MemoExoticComponent<() => react_jsx_runtime.JSX.Element | null>;
 
  const DarkModeSetting$: rxjs.BehaviorSubject<"auto" | "light" | "dark" | undefined>;
  const isDarkMode$: Observable<boolean>;
@@ -678,7 +684,7 @@ type index_d$3_ITradeCopyRelation = ITradeCopyRelation;
 
  const DarkModeEffect: () => react_jsx_runtime.JSX.Element;
 
- const DarkmodeSwitch: React$1.MemoExoticComponent<() => react_jsx_runtime.JSX.Element>;
+ const DarkmodeSwitch: React__default.MemoExoticComponent<() => react_jsx_runtime.JSX.Element>;
 
 /**
  * Hook to use the page closing confirm
