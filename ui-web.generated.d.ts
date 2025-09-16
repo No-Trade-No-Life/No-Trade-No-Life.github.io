@@ -319,6 +319,7 @@ interface IOptions {
     sorting?: SortingState;
     onSortingChange?: OnChangeFn<SortingState>;
     manualSorting?: boolean;
+    manualPagination?: boolean;
     initialGroupping?: GroupingState;
     initialColumnVisibility?: VisibilityState;
     initialColumnFilterState?: ColumnFiltersState;
@@ -332,6 +333,8 @@ interface IOptions {
         table: Table<T>;
     }>;
     enableAutoPause?: boolean;
+    pageCount?: number;
+    totalCount?: number;
 }): react_jsx_runtime.JSX.Element;
 
  function ListView<T>(props: {
