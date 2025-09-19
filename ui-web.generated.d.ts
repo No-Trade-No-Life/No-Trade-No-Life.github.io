@@ -10,6 +10,7 @@ import * as _yuants_data_account from '@yuants/data-account';
 import { ColumnDef, Table, SortingState, OnChangeFn, GroupingState, VisibilityState, ColumnFiltersState, ExpandedState } from '@tanstack/react-table';
 import { ThemeProps, FormProps } from '@rjsf/core';
 import { StrictRJSFSchema, RJSFSchema, FormContextType, TemplatesType, RegistryWidgetsType, UiSchema } from '@rjsf/utils';
+import { AutoCompleteProps } from '@douyinfe/semi-ui/lib/es/autoComplete';
 import { ButtonProps } from '@douyinfe/semi-ui/lib/es/button';
 import { UniqueIdentifier } from '@dnd-kit/core';
 import { SwitchProps } from '@douyinfe/semi-ui/lib/es/switch';
@@ -293,6 +294,14 @@ interface IOptions {
   export {  };
 }
 
+ function AutoComplete(props: Omit<AutoCompleteProps<{
+    label: string;
+    value: string;
+}>, 'value' | 'onChange'> & {
+    value: string;
+    onChange: (value: string) => void;
+}): react_jsx_runtime.JSX.Element;
+
 /**
  * Yuan Button Component
  *
@@ -382,6 +391,7 @@ interface IPivotTableProps<T> {
     close: (id: string) => void;
 };
 
+ const index_d$d_AutoComplete: typeof AutoComplete;
  const index_d$d_Button: typeof Button;
  const index_d$d_DataView: typeof DataView;
 type index_d$d_IPivotTableProps<T> = IPivotTableProps<T>;
@@ -393,7 +403,7 @@ type index_d$d_IPivotTableProps<T> = IPivotTableProps<T>;
  const index_d$d_Toast: typeof Toast;
 type index_d$d_ToastProps = ToastProps;
  namespace index_d$d {
-  export { index_d$d_Button as Button, index_d$d_DataView as DataView, type index_d$d_IPivotTableProps as IPivotTableProps, index_d$d_ListView as ListView, index_d$d_PivotTable as PivotTable, index_d$d_SortableList as SortableList, index_d$d_Switch as Switch, index_d$d_TableView as TableView, index_d$d_Toast as Toast, type index_d$d_ToastProps as ToastProps };
+  export { index_d$d_AutoComplete as AutoComplete, index_d$d_Button as Button, index_d$d_DataView as DataView, type index_d$d_IPivotTableProps as IPivotTableProps, index_d$d_ListView as ListView, index_d$d_PivotTable as PivotTable, index_d$d_SortableList as SortableList, index_d$d_Switch as Switch, index_d$d_TableView as TableView, index_d$d_Toast as Toast, type index_d$d_ToastProps as ToastProps };
 }
 
  namespace index_d$c {
