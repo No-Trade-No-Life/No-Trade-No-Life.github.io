@@ -21,9 +21,9 @@ import { IQuote } from '@yuants/data-quote';
 
  const schemaOfAccountComposerConfig: JSONSchema7;
 
- const index_d$w_schemaOfAccountComposerConfig: typeof schemaOfAccountComposerConfig;
- namespace index_d$w {
-  export { index_d$w_schemaOfAccountComposerConfig as schemaOfAccountComposerConfig };
+ const index_d$x_schemaOfAccountComposerConfig: typeof schemaOfAccountComposerConfig;
+ namespace index_d$x {
+  export { index_d$x_schemaOfAccountComposerConfig as schemaOfAccountComposerConfig };
 }
 
  const AccountSelector: (props: {
@@ -38,11 +38,15 @@ import { IQuote } from '@yuants/data-quote';
 
  const useAccountInfo: (account_id: string) => rxjs.Observable<_yuants_data_account.IAccountInfo>;
 
- const index_d$v_AccountSelector: typeof AccountSelector;
- const index_d$v_InlineAccountId: typeof InlineAccountId;
- const index_d$v_useAccountInfo: typeof useAccountInfo;
+ const index_d$w_AccountSelector: typeof AccountSelector;
+ const index_d$w_InlineAccountId: typeof InlineAccountId;
+ const index_d$w_useAccountInfo: typeof useAccountInfo;
+ namespace index_d$w {
+  export { index_d$w_AccountSelector as AccountSelector, index_d$w_InlineAccountId as InlineAccountId, index_d$w_useAccountInfo as useAccountInfo };
+}
+
  namespace index_d$v {
-  export { index_d$v_AccountSelector as AccountSelector, index_d$v_InlineAccountId as InlineAccountId, index_d$v_useAccountInfo as useAccountInfo };
+  export {  };
 }
 
  namespace index_d$u {
@@ -751,6 +755,6 @@ type index_d_IHostConfigItem = IHostConfigItem;
   export { index_d_DarkModeEffect as DarkModeEffect, index_d_DarkModeSetting$ as DarkModeSetting$, index_d_DarkmodeSwitch as DarkmodeSwitch, index_d_FullScreenButton as FullScreenButton, index_d_HomePage as HomePage, type index_d_IHostConfigItem as IHostConfigItem, index_d_currentHostConfig$ as currentHostConfig$, index_d_hostConfigList$ as hostConfigList$, index_d_initAction$ as initAction$, index_d_isDarkMode$ as isDarkMode$, index_d_isShowHome$ as isShowHome$, index_d_network$ as network$, index_d_toggleShowHome as toggleShowHome, index_d_useIsDarkMode as useIsDarkMode, index_d_usePageClosingConfirm as usePageClosingConfirm };
 }
 
-export { index_d$w as AccountComposition, index_d$v as AccountInfo, index_d$u as AccountRiskInfo, index_d$t as Agent, index_d$s as Audit, index_d$r as BIOS, index_d$q as Chart, index_d$p as CommandCenter, index_d$o as Copilot, index_d$n as Data, index_d$m as DataRecord, index_d$l as DataSeries, index_d$k as Deploy, index_d$j as DesktopLayout, index_d$i as Editor, index_d$h as Extensions, index_d$g as FileSystem, index_d$f as Form, index_d$e as Fund, index_d$d as Interactive, index_d$c as Kernel, index_d$b as Market, index_d$a as Network, index_d$9 as Order, index_d$8 as Pages, index_d$7 as Products, index_d$6 as SQL, index_d$5 as System, index_d$4 as Terminals, index_d$3 as TradeCopier, index_d$2 as TransferOrder, index_d$1 as Util, index_d as Workbench };
+export { index_d$x as AccountComposition, index_d$w as AccountInfo, index_d$v as AccountRiskInfo, index_d$u as Agent, index_d$t as Alert, index_d$s as Audit, index_d$r as BIOS, index_d$q as Chart, index_d$p as CommandCenter, index_d$o as Copilot, index_d$n as Data, index_d$m as DataRecord, index_d$l as DataSeries, index_d$k as Deploy, index_d$j as DesktopLayout, index_d$i as Editor, index_d$h as Extensions, index_d$g as FileSystem, index_d$f as Form, index_d$e as Fund, index_d$d as Interactive, index_d$c as Kernel, index_d$b as Market, index_d$a as Network, index_d$9 as Order, index_d$8 as Pages, index_d$7 as Products, index_d$6 as SQL, index_d$5 as System, index_d$4 as Terminals, index_d$3 as TradeCopier, index_d$2 as TransferOrder, index_d$1 as Util, index_d as Workbench };
 
 }
