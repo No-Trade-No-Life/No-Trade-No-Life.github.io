@@ -3,7 +3,7 @@ declare module "@yuants/ui-web" {
 import { JSONSchema7 } from 'json-schema';
 import * as react_jsx_runtime from 'react/jsx-runtime';
 import * as React$1 from 'react';
-import React__default, { ComponentType } from 'react';
+import React__default, { ComponentType, ReactNode } from 'react';
 import * as rxjs from 'rxjs';
 import { BehaviorSubject, ReplaySubject, Observable, Subject } from 'rxjs';
 import * as _yuants_data_account from '@yuants/data-account';
@@ -399,9 +399,20 @@ interface IPivotTableProps<T> {
     close: (id: string) => void;
 };
 
+interface Props {
+    data: Array<{
+        key: string | ReactNode;
+        value: string | ReactNode;
+        suffix?: string | ReactNode;
+        prefix?: string | ReactNode;
+    }>;
+}
+ const Description: (props: Props) => react_jsx_runtime.JSX.Element;
+
  const index_d$e_AutoComplete: typeof AutoComplete;
  const index_d$e_Button: typeof Button;
  const index_d$e_DataView: typeof DataView;
+ const index_d$e_Description: typeof Description;
 type index_d$e_IPivotTableProps<T> = IPivotTableProps<T>;
  const index_d$e_ListView: typeof ListView;
  const index_d$e_PivotTable: typeof PivotTable;
@@ -411,7 +422,7 @@ type index_d$e_IPivotTableProps<T> = IPivotTableProps<T>;
  const index_d$e_Toast: typeof Toast;
 type index_d$e_ToastProps = ToastProps;
  namespace index_d$e {
-  export { index_d$e_AutoComplete as AutoComplete, index_d$e_Button as Button, index_d$e_DataView as DataView, type index_d$e_IPivotTableProps as IPivotTableProps, index_d$e_ListView as ListView, index_d$e_PivotTable as PivotTable, index_d$e_SortableList as SortableList, index_d$e_Switch as Switch, index_d$e_TableView as TableView, index_d$e_Toast as Toast, type index_d$e_ToastProps as ToastProps };
+  export { index_d$e_AutoComplete as AutoComplete, index_d$e_Button as Button, index_d$e_DataView as DataView, index_d$e_Description as Description, type index_d$e_IPivotTableProps as IPivotTableProps, index_d$e_ListView as ListView, index_d$e_PivotTable as PivotTable, index_d$e_SortableList as SortableList, index_d$e_Switch as Switch, index_d$e_TableView as TableView, index_d$e_Toast as Toast, type index_d$e_ToastProps as ToastProps };
 }
 
  namespace index_d$d {
