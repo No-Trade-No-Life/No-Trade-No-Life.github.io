@@ -406,6 +406,7 @@ interface Props {
         suffix?: string | ReactNode;
         prefix?: string | ReactNode;
     }>;
+    minColumnWidth?: number;
 }
  const Description: (props: Props) => react_jsx_runtime.JSX.Element;
 
