@@ -352,6 +352,9 @@ interface IOptions {
     enableAutoPause?: boolean;
     pageCount?: number;
     totalCount?: number;
+    hideGroup?: boolean;
+    hideFieldSettings?: boolean;
+    hideExport?: boolean;
 }): react_jsx_runtime.JSX.Element;
 
  function ListView<T>(props: {
