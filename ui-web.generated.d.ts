@@ -382,7 +382,7 @@ interface IPivotTableProps<T> {
  * - Switch displays loading if and only if click event processing
  * - We need to know whether the backend click event is processing or not.
  */
- const Switch: React__default.MemoExoticComponent<(props: Omit<SwitchProps, "loading" | "onChange"> & {
+ const Switch: React__default.MemoExoticComponent<(props: Omit<SwitchProps, "onChange" | "loading"> & {
     onChange?: ((checked: boolean) => any) | undefined;
 }) => react_jsx_runtime.JSX.Element>;
 
@@ -492,6 +492,10 @@ type index_d$a_IInterleavingConfigItem = IInterleavingConfigItem;
     };
     render(): string | number | boolean | Iterable<React__default.ReactNode> | react_jsx_runtime.JSX.Element | null | undefined;
 }
+ const DefaultErrorFallback: ({ error, reset }: {
+    error: any;
+    reset: () => void;
+}) => react_jsx_runtime.JSX.Element;
 
  const LocalizePageTitle: React__default.ComponentType<{
     type: string;
@@ -528,6 +532,7 @@ interface IPage {
  const usePageId: () => string;
 
  const index_d$9_AvailableComponents: typeof AvailableComponents;
+ const index_d$9_DefaultErrorFallback: typeof DefaultErrorFallback;
 type index_d$9_ErrorBoundary = ErrorBoundary;
  const index_d$9_ErrorBoundary: typeof ErrorBoundary;
  const index_d$9_LocalizePageTitle: typeof LocalizePageTitle;
@@ -540,7 +545,7 @@ type index_d$9_ErrorBoundary = ErrorBoundary;
  const index_d$9_usePageType: typeof usePageType;
  const index_d$9_usePageViewport: typeof usePageViewport;
  namespace index_d$9 {
-  export { index_d$9_AvailableComponents as AvailableComponents, index_d$9_ErrorBoundary as ErrorBoundary, index_d$9_LocalizePageTitle as LocalizePageTitle, index_d$9_Page as Page, index_d$9_pageRegistered$ as pageRegistered$, index_d$9_registerPage as registerPage, index_d$9_usePageId as usePageId, index_d$9_usePageParams as usePageParams, index_d$9_usePageTitle as usePageTitle, index_d$9_usePageType as usePageType, index_d$9_usePageViewport as usePageViewport };
+  export { index_d$9_AvailableComponents as AvailableComponents, index_d$9_DefaultErrorFallback as DefaultErrorFallback, index_d$9_ErrorBoundary as ErrorBoundary, index_d$9_LocalizePageTitle as LocalizePageTitle, index_d$9_Page as Page, index_d$9_pageRegistered$ as pageRegistered$, index_d$9_registerPage as registerPage, index_d$9_usePageId as usePageId, index_d$9_usePageParams as usePageParams, index_d$9_usePageTitle as usePageTitle, index_d$9_usePageType as usePageType, index_d$9_usePageViewport as usePageViewport };
 }
 
  namespace index_d$8 {
