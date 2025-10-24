@@ -357,6 +357,40 @@ interface IOptions {
     hideExport?: boolean;
 }): react_jsx_runtime.JSX.Element;
 
+interface Props {
+    data: Array<{
+        key: string | ReactNode;
+        value: string | ReactNode;
+        suffix?: string | ReactNode;
+        prefix?: string | ReactNode;
+    }>;
+    minColumnWidth?: number;
+}
+ const Description: (props: Props) => react_jsx_runtime.JSX.Element;
+
+/**
+ * 将时间戳解析成人类易读的格式
+ * @param t 时间戳
+ */
+ const formatDurationFromNow: (t: number | string | Date) => {
+    text: string;
+    updatingAfter: number;
+};
+/**
+ * 显示某个时间点距离现在的大约时间间隔
+ *
+ * 悬浮显示完整时间
+ *
+ * @remarks
+ * 人类普遍习惯使用相对时间来表示时间点，例如 "5分钟前"、"2小时前"、"3天前" 等等。
+ * 这种表示方式更符合人类的时间感知，有助于用户快速理解时间点的相对位置。
+ * 此外，悬浮显示完整时间可以在用户需要时提供精确的时间信息，满足不同场景下的需求。
+ *
+ */
+ const InlineTime: (props: {
+    time: number | string | Date;
+}) => react_jsx_runtime.JSX.Element;
+
  function ListView<T>(props: {
     table: Table<T>;
 }): react_jsx_runtime.JSX.Element;
@@ -402,22 +436,12 @@ interface IPivotTableProps<T> {
     close: (id: string) => void;
 };
 
-interface Props {
-    data: Array<{
-        key: string | ReactNode;
-        value: string | ReactNode;
-        suffix?: string | ReactNode;
-        prefix?: string | ReactNode;
-    }>;
-    minColumnWidth?: number;
-}
- const Description: (props: Props) => react_jsx_runtime.JSX.Element;
-
  const index_d$f_AutoComplete: typeof AutoComplete;
  const index_d$f_Button: typeof Button;
  const index_d$f_DataView: typeof DataView;
  const index_d$f_Description: typeof Description;
 type index_d$f_IPivotTableProps<T> = IPivotTableProps<T>;
+ const index_d$f_InlineTime: typeof InlineTime;
  const index_d$f_ListView: typeof ListView;
  const index_d$f_PivotTable: typeof PivotTable;
  const index_d$f_SortableList: typeof SortableList;
@@ -425,8 +449,9 @@ type index_d$f_IPivotTableProps<T> = IPivotTableProps<T>;
  const index_d$f_TableView: typeof TableView;
  const index_d$f_Toast: typeof Toast;
 type index_d$f_ToastProps = ToastProps;
+ const index_d$f_formatDurationFromNow: typeof formatDurationFromNow;
  namespace index_d$f {
-  export { index_d$f_AutoComplete as AutoComplete, index_d$f_Button as Button, index_d$f_DataView as DataView, index_d$f_Description as Description, type index_d$f_IPivotTableProps as IPivotTableProps, index_d$f_ListView as ListView, index_d$f_PivotTable as PivotTable, index_d$f_SortableList as SortableList, index_d$f_Switch as Switch, index_d$f_TableView as TableView, index_d$f_Toast as Toast, type index_d$f_ToastProps as ToastProps };
+  export { index_d$f_AutoComplete as AutoComplete, index_d$f_Button as Button, index_d$f_DataView as DataView, index_d$f_Description as Description, type index_d$f_IPivotTableProps as IPivotTableProps, index_d$f_InlineTime as InlineTime, index_d$f_ListView as ListView, index_d$f_PivotTable as PivotTable, index_d$f_SortableList as SortableList, index_d$f_Switch as Switch, index_d$f_TableView as TableView, index_d$f_Toast as Toast, type index_d$f_ToastProps as ToastProps, index_d$f_formatDurationFromNow as formatDurationFromNow };
 }
 
  namespace index_d$e {
