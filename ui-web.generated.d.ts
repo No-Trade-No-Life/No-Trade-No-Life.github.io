@@ -369,6 +369,13 @@ interface Props {
  const Description: (props: Props) => react_jsx_runtime.JSX.Element;
 
 /**
+ * 人类易读的数字格式
+ */
+ const InlineNumber: (props: {
+    number: number | string;
+}) => react_jsx_runtime.JSX.Element;
+
+/**
  * 显示某个时间点距离现在的大约时间间隔
  *
  * 悬浮显示完整时间
@@ -433,6 +440,7 @@ interface IPivotTableProps<T> {
  const index_d$f_DataView: typeof DataView;
  const index_d$f_Description: typeof Description;
 type index_d$f_IPivotTableProps<T> = IPivotTableProps<T>;
+ const index_d$f_InlineNumber: typeof InlineNumber;
  const index_d$f_InlineTime: typeof InlineTime;
  const index_d$f_ListView: typeof ListView;
  const index_d$f_PivotTable: typeof PivotTable;
@@ -442,7 +450,7 @@ type index_d$f_IPivotTableProps<T> = IPivotTableProps<T>;
  const index_d$f_Toast: typeof Toast;
 type index_d$f_ToastProps = ToastProps;
  namespace index_d$f {
-  export { index_d$f_AutoComplete as AutoComplete, index_d$f_Button as Button, index_d$f_DataView as DataView, index_d$f_Description as Description, type index_d$f_IPivotTableProps as IPivotTableProps, index_d$f_InlineTime as InlineTime, index_d$f_ListView as ListView, index_d$f_PivotTable as PivotTable, index_d$f_SortableList as SortableList, index_d$f_Switch as Switch, index_d$f_TableView as TableView, index_d$f_Toast as Toast, type index_d$f_ToastProps as ToastProps };
+  export { index_d$f_AutoComplete as AutoComplete, index_d$f_Button as Button, index_d$f_DataView as DataView, index_d$f_Description as Description, type index_d$f_IPivotTableProps as IPivotTableProps, index_d$f_InlineNumber as InlineNumber, index_d$f_InlineTime as InlineTime, index_d$f_ListView as ListView, index_d$f_PivotTable as PivotTable, index_d$f_SortableList as SortableList, index_d$f_Switch as Switch, index_d$f_TableView as TableView, index_d$f_Toast as Toast, type index_d$f_ToastProps as ToastProps };
 }
 
  namespace index_d$e {
