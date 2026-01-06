@@ -1,5 +1,4 @@
 declare module "@yuants/ui-web" {
-/// <reference types="react" />
 import { JSONSchema7 } from 'json-schema';
 import * as react_jsx_runtime from 'react/jsx-runtime';
 import * as React$1 from 'react';
@@ -273,7 +272,7 @@ interface IOptions {
  function generateTheme<T = any, S extends StrictRJSFSchema = RJSFSchema, F extends FormContextType = any>(): ThemeProps<T, S, F>;
  const Theme: ThemeProps<any, RJSFSchema, any>;
  function generateForm<T = any, S extends StrictRJSFSchema = RJSFSchema, F extends FormContextType = any>(): ComponentType<FormProps<T, S, F>>;
- const Form: (props: Omit<FormProps<any, any, any>, 'validator'>) => React__default.ReactElement<FormProps<any, RJSFSchema, any>, string | React__default.JSXElementConstructor<any>>;
+ const Form: (props: Omit<FormProps<any, any, any>, "validator">) => React__default.ReactElement<FormProps<any, RJSFSchema, any>, string | React__default.JSXElementConstructor<any>>;
 
 /**
  * Request user to input data according to the schema.
@@ -287,9 +286,9 @@ interface IOptions {
      * if set to true, the form will be submitted immediately without showing the form.
      * if initial data is invalid, the form will be shown as usual.
      */
-    immediateSubmit?: boolean | undefined;
-    uiSchema?: UiSchema<T, any, any> | undefined;
-} | undefined) => Promise<T>;
+    immediateSubmit?: boolean;
+    uiSchema?: UiSchema<T, any, any>;
+}) => Promise<T>;
 
  const index_d$h_Form: typeof Form;
  const index_d$h_Theme: typeof Theme;
@@ -321,7 +320,7 @@ interface IOptions {
  * - Button displays loading if and only if click event processing
  * - We need to know whether the backend click event is processing or not.
  */
- const Button: React__default.MemoExoticComponent<(props: Omit<ButtonProps, 'onClick' | 'loading'> & {
+ const Button: React__default.MemoExoticComponent<(props: Omit<ButtonProps, "onClick" | "loading"> & {
     onClick?: () => any;
     doubleCheck?: {
         title: React__default.ReactNode;
@@ -420,14 +419,14 @@ interface IPivotTableProps<T> {
  * - We need to know whether the backend click event is processing or not.
  */
  const Switch: React__default.MemoExoticComponent<(props: Omit<SwitchProps, "onChange" | "loading"> & {
-    onChange?: ((checked: boolean) => any) | undefined;
+    onChange?: (checked: boolean) => any;
 }) => react_jsx_runtime.JSX.Element>;
 
  function TableView<T>(props: {
     table: Table<T>;
 }): react_jsx_runtime.JSX.Element;
 
- type ToastProps = string | Omit<ToastReactProps, 'type'>;
+type ToastProps = string | Omit<ToastReactProps, 'type'>;
 /**
  * Yuan Toast Component
  */
@@ -657,7 +656,7 @@ interface ITradeCopyRelation {
     exclusive_comment_pattern?: string;
     disabled?: boolean;
 }
- type ITradeCopierStrategyBase = {
+type ITradeCopierStrategyBase = {
     /**
      * 策略类型
      */
@@ -667,7 +666,7 @@ interface ITradeCopyRelation {
      */
     max_volume?: number;
 };
- type ITradeCopierStrategyConfig = {
+type ITradeCopierStrategyConfig = {
     /**
      * 全局默认配置
      */
@@ -738,7 +737,7 @@ type index_d$4_ITradeCopyRelation = ITradeCopyRelation;
      * @param transpose 是否转置数据 (行列互换), 默认不转置
      */
     writeFileFromRawTable: (filename: string, data: any[][], transpose?: boolean) => Promise<void>;
-    parse: <T_1 = any>(csvString: string) => T_1[];
+    parse: <T = any>(csvString: string) => T[];
     stringify: (data: any[]) => string;
 };
 
